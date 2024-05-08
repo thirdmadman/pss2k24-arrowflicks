@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <Container px={0} size="1440">
+    <Container c="purple.5" px={0} size="1440">
       <div className="home-page">
         <h1>ArrowFlicks - Movies</h1>
       </div>
