@@ -1,6 +1,6 @@
 import '@mantine/core/styles.css';
-
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+import theme from '@/theme/theme';
 
 export const metadata = {
   title: 'ArrowFlicks',
@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="shortcut icon" href="/favicon.ico" />
       </head>
       <body>
-        <MantineProvider>{children}</MantineProvider>
+        <MantineProvider theme={theme}>{children}</MantineProvider>
       </body>
     </html>
   );
