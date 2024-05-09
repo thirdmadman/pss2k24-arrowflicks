@@ -1,4 +1,4 @@
-import { MantineColorsTuple, MantineThemeOverride } from '@mantine/core';
+import { DefaultMantineColor, MantineColorShade, MantineColorsTuple, MantineThemeOverride } from '@mantine/core';
 const white: MantineColorsTuple = [
   '#FFFFFF',
   '#FFFFFF',
@@ -57,6 +57,14 @@ const colors = {
   gray,
   white,
 };
+
+export const getColor = (
+  name: keyof typeof colors | DefaultMantineColor,
+  index: MantineColorShade,
+  defaultColor = '#ffffff'
+) =>
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  theme.colors?.[name]?.[index] ?? defaultColor;
 
 const theme: MantineThemeOverride = {
   colors,
