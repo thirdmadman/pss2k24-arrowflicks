@@ -7,6 +7,14 @@ describe('Home page', () => {
     vi.mock('next/image', () => ({
       default: () => <div>img</div>,
     }));
+
+    vi.mock('@mantine/core', async () => {
+      const actual = await vi.importActual('@mantine/core');
+      return {
+        ...actual,
+        Button: () => <button>Button</button>,
+      };
+    });
   });
 
   it('should render without failing', () => {
