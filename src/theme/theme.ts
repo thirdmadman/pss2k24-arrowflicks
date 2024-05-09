@@ -1,4 +1,4 @@
-import { MantineColorsTuple, MantineThemeOverride } from '@mantine/core';
+import { MantineColorsTuple, MantineThemeColorsOverride, MantineThemeOverride } from '@mantine/core';
 const white: MantineColorsTuple = [
   '#FFFFFF',
   '#FFFFFF',
@@ -51,7 +51,7 @@ const purple: MantineColorsTuple = [
   '#541F9D',
 ];
 
-const colors = {
+const colors: MantineThemeColorsOverride = {
   purple,
   black,
   gray,
