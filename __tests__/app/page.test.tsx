@@ -8,6 +8,28 @@ describe('Home page', () => {
       default: () => <div>img</div>,
     }));
 
+    vi.mock('next/navigation', async () => {
+      const actual = await vi.importActual('next/navigation');
+      return {
+        ...actual,
+        useRouter() {
+          return {
+            route: '/',
+            pathname: '',
+            query: '',
+            asPath: '',
+          };
+        },
+        useSearchParams() {
+          return {
+            get(value: string) {
+              return value;
+            },
+          };
+        },
+      };
+    });
+
     vi.mock('@mantine/core', async () => {
       const actual = await vi.importActual('@mantine/core');
       return {
@@ -18,12 +40,12 @@ describe('Home page', () => {
   });
 
   it('should render without failing', () => {
-    const { container } = render(Home());
+    const { container } = render(Home({}));
     expect(container.firstElementChild).not.toBeNull();
   });
 
   it('should contain title', () => {
-    render(Home());
+    render(Home({}));
     expect(screen.getByText('ArrowFlicks - Movies')).not.toBeNull();
   });
 });
