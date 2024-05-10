@@ -1,0 +1,37 @@
+.root {
+  padding: 7px 11px;
+  border-radius: 8px;
+  border: 1px solid var(--mantine-color-gray-5);
+  &:has(.wrapper > .input:focus) {
+    border: 1px solid var(--mantine-color-purple-5);
+  }
+  transition: border 0.2s ease-out;
+  &:hover {
+    border: 1px solid var(--mantine-color-purple-5);
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.section {
+  position: unset;
+  height: auto;
+  min-height: auto;
+  display: block;
+  min-width: auto;
+  width: auto;
+}
+
+.input {
+  padding: 0;
+  height: auto;
+  min-height: auto;
+  font-size: 14px;
+  line-height: 20px;
+  border: none;
+  caret-color: var(--mantine-color-purple-5);
+}
+
