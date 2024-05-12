@@ -13,9 +13,10 @@ interface IMultiSelectProps {
   options: Array<string>;
   value?: string;
   onChange?: (selected: Array<string>) => void;
+  maxOptions?: number;
 }
 
-export function MultiSelectInput({ value, label, options, placeholder, onChange }: IMultiSelectProps) {
+export function MultiSelectInput({ value, label, options, placeholder, onChange, maxOptions }: IMultiSelectProps) {
   const values = value?.split(';');
   const [selectedValues, setSelectedValues] = useState<Array<string>>([]);
   const [isDropDownOpened, setIsDropDownOpened] = useState(false);
@@ -59,6 +60,7 @@ export function MultiSelectInput({ value, label, options, placeholder, onChange 
         section: classes.section,
       }}
       withCheckIcon={false}
+      maxValues={maxOptions ?? undefined}
     />
   );
 }
