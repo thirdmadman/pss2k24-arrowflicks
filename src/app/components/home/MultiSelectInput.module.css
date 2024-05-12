@@ -30,14 +30,25 @@
 }
 
 .option {
+  margin-bottom: 4px;
   border-radius: 8px;
+  padding: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--mantine-color-black);
 
-  &:hover {
+  &[data-checked="true"] {
     color: var(--mantine-color-white);
     background-color: var(--mantine-color-purple-5);
   }
-}
 
+  &:hover {
+    color: var(--mantine-color-black);
+    background-color: var(--mantine-color-purple-1);
+  }
+  
+  transition: color, background-color  0.2s ease-out;
+}
 .pill {
   font-size: 14px;
   line-height: 20px;

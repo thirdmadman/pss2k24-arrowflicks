@@ -58,7 +58,7 @@ export function MultiSelectInput({ value, label, options, placeholder, onChange 
         inputField: isAnyOptionSelected ? classes.inputFieldDisabled : undefined,
         section: classes.section,
       }}
-      maxValues={3}
+      withCheckIcon={false}
     />
   );
 }
