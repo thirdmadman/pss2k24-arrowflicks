@@ -1,0 +1,64 @@
+'use client';
+
+import { Center, MultiSelect } from '@mantine/core';
+import classes from './MultiSelectInput.module.css';
+import { useState } from 'react';
+import { IconArrowDown } from '../shared/icons/IconArrowDown';
+import { getColor } from '@/theme/theme';
+import { IconArrowUp } from '../shared/icons/IconArrowUp';
+
+interface IMultiSelectProps {
+  label: string;
+  placeholder: string;
+  options: Array<string>;
+  value?: string;
+  onChange?: (selected: Array<string>) => void;
+}
+
+export function MultiSelectInput({ value, label, options, placeholder, onChange }: IMultiSelectProps) {
+  const values = value?.split(';');
+  const [selectedValues, setSelectedValues] = useState<Array<string>>([]);
+  const [isDropDownOpened, setIsDropDownOpened] = useState(false);
+
+  const isAnyOptionSelected = selectedValues.length > 0;
+  const colorGray = getColor('gray', 5);
+  const colorPurple = getColor('purple', 5);
+
+  const arrowIcon = isDropDownOpened ? <IconArrowUp color={colorPurple} /> : <IconArrowDown color={colorGray} />;
+
+  const icon = (
+    <Center w={'24px'} h={'24px'}>
+      {arrowIcon}
+    </Center>
+  );
+
+  return (
+    <MultiSelect
+      label={label}
+      placeholder={isAnyOptionSelected ? undefined : placeholder}
+      data={options}
+      value={selectedValues}
+      onDropdownClose={() => setIsDropDownOpened(false)}
+      onDropdownOpen={() => setIsDropDownOpened(true)}
+      defaultValue={values}
+      rightSection={icon}
+      onChange={(res) => {
+        setSelectedValues(res);
+        if (onChange) {
+          onChange(res);
+        }
+      }}
+      classNames={{
+        root: classes.root,
+        label: classes.label,
+        input: classes.input,
+        option: classes.option,
+        pill: classes.pill,
+        pillsList: classes.pillsList,
+        inputField: isAnyOptionSelected ? classes.inputFieldDisabled : undefined,
+        section: classes.section,
+      }}
+      maxValues={3}
+    />
+  );
+}
