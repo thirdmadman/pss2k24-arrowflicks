@@ -1,5 +1,5 @@
 .root {
-  min-width: 30px;
+  min-width: 32px;
   color: var(--mantine-color-black);
   padding: 4px 7px;
   font-size: 16px;
@@ -44,7 +44,7 @@
 }
 
 .chevron {
-  padding-top: 8px;
-  padding-bottom: 9px;
+  padding-top: 7px;
+  padding-bottom: 7px;
   display: flex;
 }
