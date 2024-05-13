@@ -28,6 +28,7 @@
   font-weight: 700;
   border-radius: 8px;
   border: 1px solid var(--mantine-color-gray-2);
+  pointer-events: none;
   &:hover {
     color: var(--mantine-color-gray-3);
   }

@@ -41,15 +41,15 @@ export default function Home({
             placeholder="Select genre"
           />
           <Stack>
-            <TabButton text="Movies" isActive />
-            <TabButton text="Rated Movies" />
+            <TabButton href="#" text="Movies" isActive />
+            <TabButton href="#" text="Rated Movies" />
           </Stack>
           <Group>
-            <PaginationButton isChevron chevronDirection="left" isEnabled={false} />
-            <PaginationButton text="1" isEnabled={false} />
-            <PaginationButton text="2" isSelected />
-            <PaginationButton text="3" />
-            <PaginationButton isChevron chevronDirection="right" />
+            <PaginationButton href="#" isChevron chevronDirection="left" isEnabled={false} />
+            <PaginationButton href="#1" text="1" isEnabled={false} />
+            <PaginationButton href="#2" text="2" isSelected />
+            <PaginationButton href="#" text="3" />
+            <PaginationButton href="#" isChevron chevronDirection="right" />
           </Group>
         </Group>
       </div>
