@@ -5,6 +5,7 @@ import { InputNumber } from './components/shared/InputNumber/InputNumber';
 import { MultiSelectInput } from './components/shared/MultiSelectInput/MultiSelectInput';
 import { TabButton } from './components/shared/TabButton/TabButton';
 import { PaginationButton } from './components/shared/PaginationButton/PaginationButton';
+import { Pagination } from './components/shared/Pagination/Pagination';
 
 export const metadata: Metadata = {
   title: 'ArrowFlicks - Movies',
@@ -23,9 +24,11 @@ export default function Home({
     releaseYear?: string;
     genres?: string;
   };
+  path: string;
 }) {
   const query = searchParams?.query ?? '';
   const ratingFrom = searchParams?.ratingFrom ?? '';
+  const page = searchParams?.page ? parseInt(searchParams.page) : 1;
   const genres = searchParams?.genres;
   return (
     <Container c="purple.5" px={0} size="1440">
@@ -51,6 +54,7 @@ export default function Home({
             <PaginationButton href="#" text="3" />
             <PaginationButton href="#" isChevron chevronDirection="right" />
           </Group>
+          <Pagination searchParams={searchParams} totalItemsCount={100} currentPage={page} itemsPerPage={10} />
         </Group>
       </div>
     </Container>
