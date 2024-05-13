@@ -3,9 +3,9 @@
 import { Center, MultiSelect } from '@mantine/core';
 import classes from './MultiSelectInput.module.css';
 import { useState } from 'react';
-import { IconArrowDown } from '../shared/icons/IconArrowDown';
+import { IconArrowDown } from '../icons/IconArrowDown';
 import { getColor } from '@/theme/theme';
-import { IconArrowUp } from '../shared/icons/IconArrowUp';
+import { IconArrowUp } from '../icons/IconArrowUp';
 
 interface IMultiSelectProps {
   label: string;
