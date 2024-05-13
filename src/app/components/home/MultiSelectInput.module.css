@@ -47,7 +47,7 @@
     background-color: var(--mantine-color-purple-1);
   }
   
-  transition: color, background-color  0.2s ease-out;
+  transition: background-color 0.2s ease-out, color  0.2s ease-out;
 }
 .pill {
   font-size: 14px;

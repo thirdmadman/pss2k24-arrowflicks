@@ -11,14 +11,14 @@
     background-color: var(--mantine-color-purple-2);
     color: var(--mantine-color-purple-5);
     font-weight: 700;
-    border-radius: 8;
+    border-radius: 8px;
   }
-  transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
 }
 
 .active {
   background-color: var(--mantine-color-purple-2);
   color: var(--mantine-color-purple-5);
   font-weight: 700;
-  border-radius: 8;
+  border-radius: 8px;
 }
