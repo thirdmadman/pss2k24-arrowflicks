@@ -6,6 +6,7 @@ import { MultiSelectInput } from './components/shared/MultiSelectInput/MultiSele
 import { TabButton } from './components/shared/TabButton/TabButton';
 import { PaginationButton } from './components/shared/PaginationButton/PaginationButton';
 import { Pagination } from './components/shared/Pagination/Pagination';
+import { RatingNumber } from './components/shared/RatingNumber/RatingNumber';
 
 export const metadata: Metadata = {
   title: 'ArrowFlicks - Movies',
@@ -55,6 +56,11 @@ export default function Home({
             <PaginationButton href="#" isChevron chevronDirection="right" />
           </Group>
           <Pagination searchParams={searchParams} totalItemsCount={100} currentPage={page} itemsPerPage={10} />
+          <RatingNumber rating={5} countOfReviews={1000000} />
+          <RatingNumber rating={5} countOfReviews={100000} />
+          <RatingNumber rating={5} countOfReviews={10000000} />
+          <RatingNumber rating={5} countOfReviews={999999} />
+          <RatingNumber rating={undefined} countOfReviews={0} />
         </Group>
       </div>
     </Container>
