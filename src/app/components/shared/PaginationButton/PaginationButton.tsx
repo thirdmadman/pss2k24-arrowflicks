@@ -9,7 +9,6 @@ import { UrlObject } from 'url';
 interface IPaginationButtonProps {
   text?: string;
   href: string | UrlObject;
-  onClickEvent?: () => void;
   isEnabled?: boolean;
   isSelected?: boolean;
   isChevron?: boolean;
@@ -17,7 +16,7 @@ interface IPaginationButtonProps {
 }
 
 export function PaginationButton(props: IPaginationButtonProps) {
-  const { text, onClickEvent, isEnabled = true, isSelected, isChevron, chevronDirection, href } = props;
+  const { text, isEnabled = true, isSelected, isChevron, chevronDirection, href } = props;
   let chevron = undefined;
   if (isChevron && chevronDirection) {
     const chevronColor = isEnabled ? getColor('gray', 6) : getColor('gray', 3);
@@ -32,7 +31,6 @@ export function PaginationButton(props: IPaginationButtonProps) {
       classNames={{
         root: `${classes.root} ${isEnabled ? '' : classes.disabled} ${isSelected ? classes.selected : ''} ${chevron ? classes.chevron : ''}`,
       }}
-      onClick={onClickEvent ? () => onClickEvent() : undefined}
       data-disabled={!isEnabled}
       href={href}
     >
