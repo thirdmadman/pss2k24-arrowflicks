@@ -7,6 +7,7 @@ import { TabButton } from './components/shared/TabButton/TabButton';
 import { PaginationButton } from './components/shared/PaginationButton/PaginationButton';
 import { Pagination } from './components/shared/Pagination/Pagination';
 import { RatingNumber } from './components/shared/RatingNumber/RatingNumber';
+import { MyRatingNumber } from './components/shared/MyRatingNumber/MyRatingNumber';
 
 export const metadata: Metadata = {
   title: 'ArrowFlicks - Movies',
@@ -55,12 +56,18 @@ export default function Home({
             <PaginationButton href="#" text="3" />
             <PaginationButton href="#" isChevron chevronDirection="right" />
           </Group>
-          <Pagination searchParams={searchParams} totalItemsCount={100} currentPage={page} itemsPerPage={10} />
-          <RatingNumber rating={5} countOfReviews={1000000} />
-          <RatingNumber rating={5} countOfReviews={100000} />
-          <RatingNumber rating={5} countOfReviews={10000000} />
-          <RatingNumber rating={5} countOfReviews={999999} />
-          <RatingNumber rating={undefined} countOfReviews={0} />
+          <Group>
+            <Pagination searchParams={searchParams} totalItemsCount={100} currentPage={page} itemsPerPage={10} />
+            <RatingNumber rating={5} countOfReviews={1000000} />
+            <RatingNumber rating={5} countOfReviews={100000} />
+            <RatingNumber rating={5} countOfReviews={10000000} />
+            <RatingNumber rating={5} countOfReviews={999999} />
+            <RatingNumber rating={undefined} countOfReviews={0} />
+          </Group>
+          <Group>
+            <MyRatingNumber rating={5} />
+            <MyRatingNumber rating={0} />
+          </Group>
         </Group>
       </div>
     </Container>
