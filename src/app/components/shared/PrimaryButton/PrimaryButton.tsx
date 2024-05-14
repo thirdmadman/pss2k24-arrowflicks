@@ -1,3 +1,5 @@
+'use client';
+
 import { UnstyledButton } from '@mantine/core';
 import classes from './PrimaryButton.module.css';
 
