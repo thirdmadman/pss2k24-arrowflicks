@@ -6,19 +6,17 @@ import Link from 'next/link';
 interface ITabButtonProps {
   text: string;
   href: string | UrlObject;
-  onClickEvent?: () => void;
   isActive?: boolean;
 }
 
 export function TabButton(props: ITabButtonProps) {
-  const { text, onClickEvent, isActive, href } = props;
+  const { text, isActive, href } = props;
   return (
     <UnstyledButton
       component={Link}
       classNames={{
         root: `${classes.root} ${isActive ? classes.active : ''}`,
       }}
-      onClick={onClickEvent ? () => onClickEvent() : undefined}
       href={href}
     >
       {text}
