@@ -1,13 +1,13 @@
-import { Container, Group, Stack } from '@mantine/core';
+import { Container, Group, Stack, Title } from '@mantine/core';
 import { Metadata } from 'next';
-import { SearchBar } from './components/shared/SearchBar/SearchBar';
-import { InputNumber } from './components/shared/InputNumber/InputNumber';
-import { MultiSelectInput } from './components/shared/MultiSelectInput/MultiSelectInput';
-import { TabButton } from './components/shared/TabButton/TabButton';
-import { PaginationButton } from './components/shared/PaginationButton/PaginationButton';
-import { Pagination } from './components/shared/Pagination/Pagination';
-import { RatingNumber } from './components/shared/RatingNumber/RatingNumber';
-import { MyRatingNumber } from './components/shared/MyRatingNumber/MyRatingNumber';
+import { SearchBar } from '@/app/components/shared/SearchBar/SearchBar';
+import { InputNumber } from '@/app/components/shared/InputNumber/InputNumber';
+import { MultiSelectInput } from '@/app/components/shared/MultiSelectInput/MultiSelectInput';
+import { TabButton } from '@/app/components/shared/TabButton/TabButton';
+import { Pagination } from '@/app/components/shared/Pagination/Pagination';
+import { RatingNumber } from '@/app/components/shared/RatingNumber/RatingNumber';
+import { MyRatingNumber } from '@/app/components/shared/MyRatingNumber/MyRatingNumber';
+import { MovieCard } from '@/app/components/shared/MovieCard/MovieCard';
 
 export const metadata: Metadata = {
   title: 'ArrowFlicks - Movies',
@@ -33,10 +33,12 @@ export default function Home({
   const page = searchParams?.page ? parseInt(searchParams.page) : 1;
   const genres = searchParams?.genres;
   return (
-    <Container c="purple.5" px={0} size="1440">
+    <Container px={0} size="1440">
+      <Title c="purple.5" order={1}>
+        ArrowFlicks - Movies
+      </Title>
       <div className="home-page">
-        <h1>ArrowFlicks - Movies</h1>
-        <Group>
+        <Group bg="gray.2">
           <SearchBar text={query} />
           <InputNumber value={parseInt(ratingFrom, 10)} placeholder="Rating from" />
           <MultiSelectInput
@@ -49,15 +51,8 @@ export default function Home({
             <TabButton href="#" text="Movies" isActive />
             <TabButton href="#" text="Rated Movies" />
           </Stack>
+          <Pagination searchParams={searchParams} totalItemsCount={100} currentPage={page} itemsPerPage={10} />
           <Group>
-            <PaginationButton href="#" isChevron chevronDirection="left" isEnabled={false} />
-            <PaginationButton href="#1" text="1" isEnabled={false} />
-            <PaginationButton href="#2" text="2" isSelected />
-            <PaginationButton href="#" text="3" />
-            <PaginationButton href="#" isChevron chevronDirection="right" />
-          </Group>
-          <Group>
-            <Pagination searchParams={searchParams} totalItemsCount={100} currentPage={page} itemsPerPage={10} />
             <RatingNumber rating={5} countOfReviews={1000000} />
             <RatingNumber rating={5} countOfReviews={100000} />
             <RatingNumber rating={5} countOfReviews={10000000} />
@@ -68,6 +63,15 @@ export default function Home({
             <MyRatingNumber rating={5} />
             <MyRatingNumber rating={0} />
           </Group>
+          <MovieCard
+            image={{ src: undefined, alt: 'image' }}
+            title="Film title"
+            year={1999}
+            rating={8.25}
+            userRating={1}
+            reviewsCount={100567}
+            genres={['Comedy', 'Horror', 'Drama']}
+          />
         </Group>
       </div>
     </Container>
