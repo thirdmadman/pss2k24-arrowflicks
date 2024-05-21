@@ -1,7 +1,7 @@
 'use client';
 
 import { UnstyledButton } from '@mantine/core';
-import classes from './PrimaryButton.module.css';
+import classes from '@/app/components/shared/PrimaryButton/PrimaryButton.module.css';
 
 interface IPrimaryButtonProps {
   text: string;

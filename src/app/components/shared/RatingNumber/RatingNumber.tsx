@@ -1,5 +1,5 @@
 import { getColor } from '@/theme/theme';
-import { IconStar } from '../icons/IconStar';
+import { IconStar } from '@/app/components/shared/icons/IconStar';
 import { Group, Text } from '@mantine/core';
 
 interface IRatingNumberProps {

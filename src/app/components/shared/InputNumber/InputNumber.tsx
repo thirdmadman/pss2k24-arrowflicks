@@ -1,5 +1,5 @@
 import { NumberInput } from '@mantine/core';
-import classes from './InputNumber.module.css';
+import classes from '@/app/components/shared/InputNumber/InputNumber.module.css';
 
 export function InputNumber({ value, placeholder }: { value: number; placeholder: string }) {
   return (

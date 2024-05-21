@@ -1,11 +1,11 @@
 'use client';
 
 import { Center, MultiSelect } from '@mantine/core';
-import classes from './MultiSelectInput.module.css';
+import classes from '@/app/components/shared/MultiSelectInput/MultiSelectInput.module.css';
 import { useState } from 'react';
-import { IconArrowDown } from '../icons/IconArrowDown';
+import { IconArrowDown } from '@/app/components/shared/icons/IconArrowDown';
 import { getColor } from '@/theme/theme';
-import { IconArrowUp } from '../icons/IconArrowUp';
+import { IconArrowUp } from '@/app/components/shared/icons/IconArrowUp';
 
 interface IMultiSelectProps {
   label: string;

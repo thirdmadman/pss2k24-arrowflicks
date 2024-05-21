@@ -1,5 +1,5 @@
 import { UnstyledButton } from '@mantine/core';
-import classes from './TabButton.module.css';
+import classes from '@/app/components/shared/TabButton/TabButton.module.css';
 import { UrlObject } from 'url';
 import Link from 'next/link';
 

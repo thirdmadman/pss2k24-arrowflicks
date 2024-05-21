@@ -1,6 +1,6 @@
 import { calculatePagination } from '@/utils/calculatePagination';
 import { Group } from '@mantine/core';
-import { PaginationButton } from '../PaginationButton/PaginationButton';
+import { PaginationButton } from '@/app/components/shared/PaginationButton/PaginationButton';
 
 interface IPaginationProps {
   totalItemsCount: number;

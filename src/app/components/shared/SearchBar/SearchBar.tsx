@@ -2,9 +2,9 @@
 
 import { getColor } from '@/theme/theme';
 import { TextInput } from '@mantine/core';
-import { IconSearch } from '../icons/IconSearch';
-import classes from './SearchBar.module.css';
-import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
+import { IconSearch } from '@/app/components/shared/icons/IconSearch';
+import classes from '@/app/components/shared/SearchBar/SearchBar.module.css';
+import { PrimaryButton } from '@/app/components/shared/PrimaryButton/PrimaryButton';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { setQueryParam } from '@/utils/setQueryParam';

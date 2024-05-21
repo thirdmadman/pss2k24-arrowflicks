@@ -1,7 +1,7 @@
 import { UnstyledButton } from '@mantine/core';
-import classes from './PaginationButton.module.css';
-import { IconChevronLeft } from '../icons/IconChevronLeft';
-import { IconChevronRight } from '../icons/IconChevronRight';
+import classes from '@/app/components/shared/PaginationButton/PaginationButton.module.css';
+import { IconChevronLeft } from '@/app/components/shared//icons/IconChevronLeft';
+import { IconChevronRight } from '@/app/components/shared//icons/IconChevronRight';
 import { getColor } from '@/theme/theme';
 import Link from 'next/link';
 import { UrlObject } from 'url';
