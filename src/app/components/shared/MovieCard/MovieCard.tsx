@@ -43,14 +43,14 @@ export function MovieCard(props: IMovieCardProps) {
               </div>
             </Group>
             {year && (
-              <Text c="gray.6" size="16px">
+              <Text c="grey.6" size="16px">
                 {year}
               </Text>
             )}
             <RatingNumber rating={1} countOfReviews={1} />
           </Stack>
           <Group gap="8px">
-            <Text c="gray.6" size="16px">
+            <Text c="grey.6" size="16px">
               Genres
             </Text>
             <Text c="black" size="16px">

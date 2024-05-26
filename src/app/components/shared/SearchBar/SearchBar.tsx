@@ -33,10 +33,10 @@ export function SearchBar(props: ISearchBarProps) {
 
   const { text } = props;
 
-  const grayColor = getColor('gray', 6);
+  const greyColor = getColor('grey', 6);
   const icon = (
     <div style={{ marginRight: 8 }}>
-      <IconSearch color={grayColor} />
+      <IconSearch color={greyColor} />
     </div>
   );
   return (

@@ -19,7 +19,7 @@ export function PaginationButton(props: IPaginationButtonProps) {
   const { text, isEnabled = true, isSelected, isChevron, chevronDirection, href } = props;
   let chevron = undefined;
   if (isChevron && chevronDirection) {
-    const chevronColor = isEnabled ? getColor('gray', 6) : getColor('gray', 3);
+    const chevronColor = isEnabled ? getColor('grey', 6) : getColor('grey', 3);
     chevron = <IconChevronRight color={chevronColor} />;
     if (chevronDirection === 'left') {
       chevron = <IconChevronLeft color={chevronColor} />;

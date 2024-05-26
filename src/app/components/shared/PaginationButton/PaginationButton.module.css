@@ -5,7 +5,7 @@
   font-size: 16px;
   line-height: 22px;
   border-radius: 8px;
-  border: 1px solid var(--mantine-color-gray-3);
+  border: 1px solid var(--mantine-color-grey-3);
   background-color: var(--mantine-color-white);
   text-align: center;
   &:hover {
@@ -24,17 +24,17 @@
 .disabled {
   cursor: auto;
   background-color: var(--mantine-color-white);
-  color: var(--mantine-color-gray-3);
+  color: var(--mantine-color-grey-3);
   font-weight: 700;
   border-radius: 8px;
-  border: 1px solid var(--mantine-color-gray-2);
+  border: 1px solid var(--mantine-color-grey-2);
   pointer-events: none;
   &:hover {
-    color: var(--mantine-color-gray-3);
+    color: var(--mantine-color-grey-3);
   }
   &:active {
     background-color: var(--mantine-color-white);
-    color: var(--mantine-color-gray-3);
+    color: var(--mantine-color-grey-3);
   }
 }
 

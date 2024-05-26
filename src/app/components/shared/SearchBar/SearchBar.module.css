@@ -1,7 +1,7 @@
 .root {
   padding: 7px 11px;
   border-radius: 8px;
-  border: 1px solid var(--mantine-color-gray-5);
+  border: 1px solid var(--mantine-color-grey-5);
   background-color: var(--mantine-color-white);
   &:focus-within {
     border: 1px solid var(--mantine-color-purple-5);

@@ -10,7 +10,7 @@ interface IRatingNumberProps {
 export function RatingNumber(props: IRatingNumberProps) {
   const { rating, countOfReviews } = props;
   if (!rating || rating === 0 || !countOfReviews || countOfReviews === 0) {
-    return <IconStar color={getColor('gray', 3)} />;
+    return <IconStar color={getColor('grey', 3)} />;
   }
 
   const rules = [
@@ -30,7 +30,7 @@ export function RatingNumber(props: IRatingNumberProps) {
       <Text size="16px" c="black" pr="4px" fw="bold">
         {rating}
       </Text>
-      <Text size="16px" c="gray.6">
+      <Text size="16px" c="grey.6">
         ({countOfReviewsString})
       </Text>
     </Group>

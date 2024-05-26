@@ -14,7 +14,7 @@
   padding: 10px 12px;
   padding-right: 48px;
   border-radius: 8px;
-  border: 1px solid var(--mantine-color-gray-5);
+  border: 1px solid var(--mantine-color-grey-5);
   &:focus-within {
     border: 1px solid var(--mantine-color-purple-5);
   }

@@ -22,10 +22,10 @@ export function MultiSelectInput({ value, label, options, placeholder, onChange,
   const [isDropDownOpened, setIsDropDownOpened] = useState(false);
 
   const isAnyOptionSelected = selectedValues.length > 0;
-  const colorGray = getColor('gray', 5);
+  const colorGrey = getColor('grey', 5);
   const colorPurple = getColor('purple', 5);
 
-  const arrowIcon = isDropDownOpened ? <IconArrowUp color={colorPurple} /> : <IconArrowDown color={colorGray} />;
+  const arrowIcon = isDropDownOpened ? <IconArrowUp color={colorPurple} /> : <IconArrowDown color={colorGrey} />;
 
   const icon = (
     <Center w={'24px'} h={'24px'}>

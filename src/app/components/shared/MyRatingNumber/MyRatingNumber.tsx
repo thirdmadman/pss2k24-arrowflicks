@@ -13,7 +13,7 @@ interface IRatingNumberProps {
 export function MyRatingNumber(props: IRatingNumberProps) {
   const { rating, onClickEvent } = props;
   if (!rating || rating === 0) {
-    return <IconStar color={getColor('gray', 3)} />;
+    return <IconStar color={getColor('grey', 3)} />;
   }
 
   return (

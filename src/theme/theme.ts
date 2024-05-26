@@ -12,14 +12,14 @@ const white: MantineColorsTuple = [
   '#FFFFFF',
 ];
 
-const gray: MantineColorsTuple = [
+const grey: MantineColorsTuple = [
   '#F5F5F6',
-  '#F5F5F6', // Gray 100
-  '#EAEBED', // Gray 200
-  '#D5D6DC', // Gray 300
-  '#ACADB9', // Gray 400
-  '#7B7C88', // Gray 500
-  '#7B7C88', // Gray 600
+  '#F5F5F6', // Grey 100
+  '#EAEBED', // Grey 200
+  '#D5D6DC', // Grey 300
+  '#ACADB9', // Grey 400
+  '#7B7C88', // Grey 500
+  '#7B7C88', // Grey 600
   '#7B7C88',
   '#7B7C88',
   '#7B7C88',
@@ -54,7 +54,7 @@ const purple: MantineColorsTuple = [
 const colors = {
   purple,
   black,
-  gray,
+  grey,
   white,
 };
 
