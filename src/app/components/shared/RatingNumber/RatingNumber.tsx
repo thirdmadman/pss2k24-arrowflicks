@@ -21,13 +21,13 @@ export function RatingNumber(props: IRatingNumberProps) {
   const rule = rules.find((el) => countOfReviews / el.divider > 0.1 && countOfReviews / el.divider < 1000);
 
   const countOfReviewsString = rule
-    ? `${Math.floor(countOfReviews / rule.divider).toString()}${rule.string}`
+    ? `${(Math.floor((countOfReviews / rule.divider) * 10) / 10).toString()}${rule.string}`
     : countOfReviews.toString();
 
   return (
-    <Group gap="4px">
+    <Group gap="6px">
       <IconStar color="#FAB005"></IconStar>
-      <Text size="16px" c="black" pr="4px">
+      <Text size="16px" c="black" pr="4px" fw="bold">
         {rating}
       </Text>
       <Text size="16px" c="gray.6">
