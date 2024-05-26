@@ -8,6 +8,8 @@ import { Pagination } from '@/app/components/shared/Pagination/Pagination';
 import { RatingNumber } from '@/app/components/shared/RatingNumber/RatingNumber';
 import { MyRatingNumber } from '@/app/components/shared/MyRatingNumber/MyRatingNumber';
 import { MovieCard } from '@/app/components/shared/MovieCard/MovieCard';
+import { MovieCardFull } from './components/shared/MovieCardFull/MovieCardFull';
+import { MovieCardDescription } from './components/shared/MovieCardFull/MovieCardDescription';
 
 export const metadata: Metadata = {
   title: 'ArrowFlicks - Movies',
@@ -33,12 +35,12 @@ export default function Home({
   const page = searchParams?.page ? parseInt(searchParams.page) : 1;
   const genres = searchParams?.genres;
   return (
-    <Container px={0} size="1440">
+    <Container px={0} size="1440" c="black">
       <Title c="purple.5" order={1}>
         ArrowFlicks - Movies
       </Title>
       <div className="home-page">
-        <Group bg="gray.2">
+        <Group bg="grey.2">
           <SearchBar text={query} />
           <InputNumber value={parseInt(ratingFrom, 10)} placeholder="Rating from" />
           <MultiSelectInput
@@ -72,6 +74,30 @@ export default function Home({
             reviewsCount={100567}
             genres={['Comedy', 'Horror', 'Drama']}
           />
+          <MovieCardFull
+            image={{ src: undefined, alt: 'image' }}
+            title="The Green Mile"
+            year={1999}
+            rating={9.3}
+            userRating={1}
+            reviewsCount={2900000}
+            duration={'3h 09m'}
+            premiere={'December 6, 1999'}
+            budget={'$125,000,000'}
+            grossWorldwide={'$760,006,945'}
+            genres={['Drama', 'Crime', 'Fantasy']}
+          />
+          <MovieCardDescription
+            trailerLink={'https://www.youtube.com/embed/U2Qp5pL3ovA?si=-ulcCqiz7otX3Hww'}
+            description={
+              'Dan Browns controversial best-selling novel about a powerful secret thats been kept under wraps for thousands of years comes to the screen in this suspense thriller from Director Ron Howard.'
+            }
+            productionList={[
+              { name: 'Castle Rock Entertainment', imageLink: undefined },
+              { name: 'Darkwoods Productions', imageLink: undefined },
+              { name: 'Warner Bros. Pictures', imageLink: undefined },
+            ]}
+          ></MovieCardDescription>
         </Group>
       </div>
     </Container>
