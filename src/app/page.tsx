@@ -10,6 +10,7 @@ import { MyRatingNumber } from '@/app/components/shared/MyRatingNumber/MyRatingN
 import { MovieCard } from '@/app/components/shared/MovieCard/MovieCard';
 import { MovieCardFull } from './components/shared/MovieCardFull/MovieCardFull';
 import { MovieCardDescription } from './components/shared/MovieCardFull/MovieCardDescription';
+import { BreadcrumbsNavigation } from './components/shared/BreadcrumbsNavigation/BreadcrumbsNavigation';
 
 export const metadata: Metadata = {
   title: 'ArrowFlicks - Movies',
@@ -40,7 +41,7 @@ export default function Home({
         ArrowFlicks - Movies
       </Title>
       <div className="home-page">
-        <Group bg="grey.2">
+        <Stack bg="grey.2" py="40px" px="40px">
           <SearchBar text={query} />
           <InputNumber value={parseInt(ratingFrom, 10)} placeholder="Rating from" />
           <MultiSelectInput
@@ -98,7 +99,13 @@ export default function Home({
               { name: 'Warner Bros. Pictures', imageLink: undefined },
             ]}
           ></MovieCardDescription>
-        </Group>
+          <BreadcrumbsNavigation
+            items={[
+              { title: 'Movies', href: '#' },
+              { title: 'Green mile', href: '#' },
+            ]}
+          />
+        </Stack>
       </div>
     </Container>
   );
