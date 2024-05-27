@@ -55,6 +55,7 @@ export function MovieCardDescription(props: IMovieCardDescriptionProps) {
             allowFullScreen
             style={{
               borderRadius: '9px',
+              padding: '3px 4px',
             }}
           ></iframe>
         </Stack>
