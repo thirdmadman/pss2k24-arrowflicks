@@ -31,7 +31,6 @@ export default function Home({
     releaseYear?: string;
     genres?: string;
   };
-  path: string;
 }) {
   const query = searchParams?.query ?? '';
   const ratingFrom = searchParams?.ratingFrom ?? '';
