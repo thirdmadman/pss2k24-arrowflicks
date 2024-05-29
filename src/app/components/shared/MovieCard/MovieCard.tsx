@@ -17,7 +17,7 @@ interface IMovieCardProps {
 }
 
 export function MovieCard(props: IMovieCardProps) {
-  const { image, title, year, genres } = props;
+  const { image, title, year, genres, userRating, rating, reviewsCount } = props;
   const { src, alt } = image;
 
   return (
@@ -31,6 +31,7 @@ export function MovieCard(props: IMovieCardProps) {
           style={{
             objectFit: src ? 'contain' : 'none',
           }}
+          data-test-id="MovieCardImage"
         ></Image>
         <Flex direction="column" w="100%" justify="space-between" mih={170} gap="8px">
           <Stack gap="8px">
@@ -39,7 +40,7 @@ export function MovieCard(props: IMovieCardProps) {
                 {title}
               </Title>
               <div style={{ alignSelf: 'flex-start' }}>
-                <MyRatingNumber rating={1} />
+                <MyRatingNumber data-test-id="MyRatingNumber" rating={userRating} />
               </div>
             </Group>
             {year && (
@@ -47,7 +48,7 @@ export function MovieCard(props: IMovieCardProps) {
                 {year}
               </Text>
             )}
-            <RatingNumber rating={1} countOfReviews={1} />
+            <RatingNumber rating={rating} countOfReviews={reviewsCount} />
           </Stack>
           <Group gap="8px">
             <Text c="grey.6" size="16px">
