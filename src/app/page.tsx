@@ -11,6 +11,8 @@ import { MovieCard } from '@/app/components/shared/MovieCard/MovieCard';
 import { MovieCardFull } from './components/shared/MovieCardFull/MovieCardFull';
 import { MovieCardDescription } from './components/shared/MovieCardFull/MovieCardDescription';
 import { BreadcrumbsNavigation } from './components/shared/BreadcrumbsNavigation/BreadcrumbsNavigation';
+import { Logo } from './components/shared/Logo/Logo';
+import { PageLayout } from './components/shared/PageLayout/PageLayout';
 
 export const metadata: Metadata = {
   title: 'ArrowFlicks - Movies',
@@ -40,8 +42,8 @@ export default function Home({
       <Title c="purple.5" order={1}>
         ArrowFlicks - Movies
       </Title>
-      <div className="home-page">
-        <Stack bg="grey.2" py="40px" px="40px">
+      <PageLayout>
+        <Stack bg="grey.2" py="40px" px="90px">
           <SearchBar text={query} />
           <InputNumber value={parseInt(ratingFrom, 10)} placeholder="Rating from" />
           <MultiSelectInput
@@ -51,8 +53,8 @@ export default function Home({
             placeholder="Select genre"
           />
           <Stack>
-            <TabButton href="#" text="Movies" isActive />
-            <TabButton href="#" text="Rated Movies" />
+            <TabButton href="/" text="Movies" />
+            <TabButton href="/rated" text="Rated Movies" />
           </Stack>
           <Pagination searchParams={searchParams} totalItemsCount={100} currentPage={page} itemsPerPage={10} />
           <Group>
@@ -105,8 +107,9 @@ export default function Home({
               { title: 'Green mile', href: '#' },
             ]}
           />
+          <Logo />
         </Stack>
-      </div>
+      </PageLayout>
     </Container>
   );
 }
