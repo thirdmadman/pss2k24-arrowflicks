@@ -8,6 +8,12 @@ describe('Home page', () => {
       default: () => <div>img</div>,
     }));
 
+    beforeAll(() => {
+      vi.mock('next/font/google', () => ({
+        Poppins: () => '',
+      }));
+    });
+
     vi.mock('next/navigation', async () => {
       const actual = await vi.importActual('next/navigation');
       return {
@@ -20,6 +26,7 @@ describe('Home page', () => {
             asPath: '',
           };
         },
+        usePathname: () => '',
         useSearchParams() {
           return {
             get(value: string) {
