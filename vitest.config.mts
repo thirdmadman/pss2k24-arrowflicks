@@ -30,6 +30,7 @@ export default defineConfig({
         'src/types/**',
         'src/config/**',
         'src/constants.ts',
+        'src/app/components/shared/icons/**'
       ],
     },
   },
