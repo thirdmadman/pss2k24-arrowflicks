@@ -1,4 +1,4 @@
-import { MantineColorShade, MantineColorsTuple, MantineThemeOverride } from '@mantine/core';
+import { MantineColorShade, MantineColorsTuple, MantineThemeOverride, createTheme } from '@mantine/core';
 const white: MantineColorsTuple = [
   '#FFFFFF',
   '#FFFFFF',
@@ -62,9 +62,11 @@ export const getColor = (name: keyof typeof colors, index: MantineColorShade, de
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   theme.colors?.[name]?.[index] ?? defaultColor;
 
-const theme: MantineThemeOverride = {
+const themeOverride: MantineThemeOverride = {
   colors,
   fontFamily: 'Inter, sans-serif',
 };
+
+const theme: MantineThemeOverride = createTheme(themeOverride);
 
 export default theme;
