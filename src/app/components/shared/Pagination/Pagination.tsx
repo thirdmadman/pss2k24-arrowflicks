@@ -15,6 +15,11 @@ export function Pagination({ totalItemsCount, currentPage, itemsPerPage, searchP
     totalItemsCount,
     itemsPerPage
   );
+
+  if (!totalItemsCount || totalItemsCount <= 0 || !itemsPerPage || itemsPerPage <= 0) {
+    return <div></div>;
+  }
+
   return (
     <Group>
       <PaginationButton
