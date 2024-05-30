@@ -23,7 +23,7 @@ export function UserRatingModal(props: IUserRatingModalProps) {
   const [rating, setRating] = useState(existingRating ?? 0);
   const buttonColor = getColor('grey', 5);
 
-  const grayStarColor = getColor('grey', 3);
+  const greyStarColor = getColor('grey', 3);
   const purpleStarColor = getColor('purple', 5);
 
   return (
@@ -49,7 +49,7 @@ export function UserRatingModal(props: IUserRatingModalProps) {
           count={10}
           value={rating}
           onChange={setRating}
-          emptySymbol={<IconStar color={grayStarColor} />}
+          emptySymbol={<IconStar color={greyStarColor} />}
           fullSymbol={<IconStar color={purpleStarColor} />}
         />
         <Group>
