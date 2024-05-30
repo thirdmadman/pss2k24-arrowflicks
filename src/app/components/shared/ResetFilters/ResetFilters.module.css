@@ -1,0 +1,13 @@
+.text {
+  font-weight: 500;
+  color: var(--mantine-color-grey-6);
+
+  &:hover {
+    color: var(--mantine-color-purple-4);
+  }
+  &:active {
+    color: var(--mantine-color-purple-6);
+    font-weight: 700;
+  }
+  transition: color 0.2s ease-out;
+}
