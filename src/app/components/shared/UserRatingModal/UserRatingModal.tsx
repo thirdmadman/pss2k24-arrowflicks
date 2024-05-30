@@ -1,6 +1,6 @@
 'use client';
 
-import { Modal, Stack, Text, Group, Rating } from '@mantine/core';
+import { Modal, Stack, Text, Group, Rating, UnstyledButton } from '@mantine/core';
 import { IconClose } from '../icons/IconClose';
 import { getColor } from '@/theme/theme';
 import classes from '@/app/components/shared/UserRatingModal/UserRatingModal.module.css';
@@ -8,6 +8,7 @@ import { PrimaryButton } from '../PrimaryButton/PrimaryButton';
 import { useState } from 'react';
 import { saveUserRatingToLocalStorage } from '@/lib/utils/saveUserRatingToLocalStorage';
 import { IconStar } from '../icons/IconStar';
+import { removeUserRatingFromLocalStorage } from '@/lib/utils/removeUserRatingFromLocalStorage';
 
 interface IUserRatingModalProps {
   movieId: string;
@@ -25,10 +26,10 @@ export function UserRatingModal(props: IUserRatingModalProps) {
   const grayStarColor = getColor('grey', 3);
   const purpleStarColor = getColor('purple', 5);
 
-  console.error(props);
-
   return (
     <Modal
+      maw="380px"
+      w="100%"
       size="auto"
       radius="8px"
       opened={modalState}
@@ -60,6 +61,18 @@ export function UserRatingModal(props: IUserRatingModalProps) {
               saveUserRatingToLocalStorage({ movieId, movieName, rating });
             }}
           />
+          <UnstyledButton
+            c={purpleStarColor}
+            size="14px"
+            lh="20px"
+            fw={600}
+            onClick={() => {
+              setModalState(false);
+              removeUserRatingFromLocalStorage({ movieId, movieName, rating });
+            }}
+          >
+            Remove rating
+          </UnstyledButton>
         </Group>
       </Stack>
     </Modal>
