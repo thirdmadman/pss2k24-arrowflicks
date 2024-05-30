@@ -16,7 +16,6 @@ export const saveUserRatingToLocalStorage = (data: IUserMovieRating) => {
     userRatingDataIndex = moviesRating.findIndex((el) => el.movieId === data.movieId);
   }
 
-  console.error(userRatingDataIndex);
   if (userRatingDataIndex < 0) {
     moviesRating.push(data);
     const newUserData = { ...userData, userMoviesRating: moviesRating };
