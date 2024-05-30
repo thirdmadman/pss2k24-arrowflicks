@@ -1,9 +1,21 @@
 import { NumberInput } from '@mantine/core';
 import classes from '@/app/components/shared/InputNumber/InputNumber.module.css';
 
-export function InputNumber({ value, placeholder }: { value: number; placeholder: string }) {
+interface IInputNumberProps {
+  value: number;
+  placeholder: string;
+  min: number;
+  max: number;
+}
+
+export function InputNumber(props: IInputNumberProps) {
+  const { value, placeholder, min, max } = props;
   return (
     <NumberInput
+      min={min}
+      max={max}
+      maw="150px"
+      w="100%"
       data-test-id="InputNumberInput"
       defaultValue={value}
       placeholder={placeholder}
