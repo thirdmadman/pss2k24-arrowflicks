@@ -41,6 +41,8 @@ export function SearchBar(props: ISearchBarProps) {
   );
   return (
     <TextInput
+      miw="300px"
+      w="100%"
       leftSectionPointerEvents="none"
       leftSection={icon}
       rightSectionWidth={88}
