@@ -4,12 +4,13 @@ import { MyRatingNumber } from '../MyRatingNumber/MyRatingNumber';
 import { RatingNumber } from '../RatingNumber/RatingNumber';
 
 interface IMovieCardProps {
+  movieId: string;
   image: {
     src: string | undefined;
     alt: string;
   };
-  title: string | undefined;
-  year: number | undefined;
+  title: string;
+  year: number;
   rating: number | undefined;
   userRating: number | undefined;
   reviewsCount: number | undefined;
@@ -17,7 +18,7 @@ interface IMovieCardProps {
 }
 
 export function MovieCard(props: IMovieCardProps) {
-  const { image, title, year, genres, userRating, rating, reviewsCount } = props;
+  const { image, title, year, genres, movieId, rating, reviewsCount } = props;
   const { src, alt } = image;
 
   return (
@@ -40,7 +41,7 @@ export function MovieCard(props: IMovieCardProps) {
                 {title}
               </Title>
               <div style={{ alignSelf: 'flex-start' }}>
-                <MyRatingNumber data-test-id="MyRatingNumber" rating={userRating} />
+                <MyRatingNumber data-test-id="MyRatingNumber" movieId={movieId} movieName={title} />
               </div>
             </Group>
             {year && (
