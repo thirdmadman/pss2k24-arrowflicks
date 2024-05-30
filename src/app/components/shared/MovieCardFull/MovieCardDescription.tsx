@@ -56,6 +56,8 @@ export function MovieCardDescription(props: IMovieCardDescriptionProps) {
             style={{
               borderRadius: '9px',
               padding: '3px 4px',
+              maxWidth: '500px',
+              width: '100%',
             }}
           ></iframe>
         </Stack>
