@@ -23,10 +23,10 @@ export function MyRatingNumber(props: IRatingNumberProps) {
   useEffect(() => {
     const { userData } = DataLocalStorageProvider.getData();
     const moviesRating = userData.userMoviesRating;
-    if (Boolean(moviesRating) && moviesRating.length > 0) {
+    if (Boolean(moviesRating) && moviesRating.length >= 0) {
       setUserRating(moviesRating.find((el) => el.movieId === movieId) ?? null);
     }
-  }, [movieId, isModalOpened]);
+  }, [isModalOpened]);
 
   if (userRating === null) {
     starIcon = <IconStar color={getColor('grey', 3)} />;
