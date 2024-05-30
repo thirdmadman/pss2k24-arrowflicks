@@ -2,7 +2,7 @@ import { NumberInput } from '@mantine/core';
 import classes from '@/app/components/shared/InputNumber/InputNumber.module.css';
 
 interface IInputNumberProps {
-  value: number;
+  value: number | undefined;
   placeholder: string;
   min: number;
   max: number;

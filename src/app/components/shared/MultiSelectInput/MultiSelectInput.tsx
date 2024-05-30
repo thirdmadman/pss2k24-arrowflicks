@@ -6,19 +6,26 @@ import { useState } from 'react';
 import { IconArrowDown } from '@/app/components/shared/icons/IconArrowDown';
 import { getColor } from '@/theme/theme';
 import { IconArrowUp } from '@/app/components/shared/icons/IconArrowUp';
+import { updateGetQuery } from '@/lib/utils/updateGetQuery';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 interface IMultiSelectProps {
   label: string;
   placeholder: string;
   options: Array<string>;
+  queryKey: string;
   value?: string;
-  onChange?: (selected: Array<string>) => void;
   maxOptions?: number;
 }
 
-export function MultiSelectInput({ value, label, options, placeholder, onChange, maxOptions }: IMultiSelectProps) {
-  const values = value?.split(';');
-  const [selectedValues, setSelectedValues] = useState<Array<string>>([]);
+export function MultiSelectInput(props: IMultiSelectProps) {
+  const { value, label, options, placeholder, maxOptions, queryKey } = props;
+  console.error(props);
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const router = useRouter();
+  const values = value?.split(';') ?? [];
+  const [selectedValues, setSelectedValues] = useState<Array<string>>(values);
   const [isDropDownOpened, setIsDropDownOpened] = useState(false);
 
   const isAnyOptionSelected = selectedValues.length > 0;
@@ -32,6 +39,15 @@ export function MultiSelectInput({ value, label, options, placeholder, onChange,
       {arrowIcon}
     </Center>
   );
+
+  const updateQuery = (value: string, currentSearchParams: URLSearchParams, isReload = false) => {
+    const newQuery = updateGetQuery(queryKey, value, currentSearchParams);
+    if (isReload) {
+      router.push(`${pathname}${newQuery}`, { scroll: false });
+      return;
+    }
+    router.replace(`${pathname}${newQuery}`, { scroll: false });
+  };
 
   return (
     <MultiSelect
@@ -48,9 +64,7 @@ export function MultiSelectInput({ value, label, options, placeholder, onChange,
       rightSection={icon}
       onChange={(res) => {
         setSelectedValues(res);
-        if (onChange) {
-          onChange(res);
-        }
+        updateQuery(res.join(';'), searchParams, true);
       }}
       classNames={{
         root: classes.root,

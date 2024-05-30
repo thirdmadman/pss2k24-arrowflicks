@@ -1,4 +1,4 @@
-import { calculatePagination } from '@/utils/calculatePagination';
+import { calculatePagination } from '@/lib/utils/calculatePagination';
 import { Group } from '@mantine/core';
 import { PaginationButton } from '@/app/components/shared/PaginationButton/PaginationButton';
 

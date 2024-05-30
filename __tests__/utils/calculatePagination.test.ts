@@ -1,4 +1,4 @@
-import { calculatePagination } from '@/utils/calculatePagination';
+import { calculatePagination } from '@/lib/utils/calculatePagination';
 import { describe, expect } from 'vitest';
 
 describe('calculatePagination test', () => {

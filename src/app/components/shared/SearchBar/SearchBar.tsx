@@ -7,10 +7,10 @@ import classes from '@/app/components/shared/SearchBar/SearchBar.module.css';
 import { PrimaryButton } from '@/app/components/shared/PrimaryButton/PrimaryButton';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { setQueryParam } from '@/utils/setQueryParam';
+import { updateGetQuery } from '@/lib/utils/updateGetQuery';
 
 interface ISearchBarProps {
-  text: string;
+  text: string | undefined;
 }
 
 export function SearchBar(props: ISearchBarProps) {
@@ -19,16 +19,13 @@ export function SearchBar(props: ISearchBarProps) {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
 
-  const updateSearch = (searchQuery: string, isReload = false) => {
-    const current = new URLSearchParams(Array.from(searchParams.entries()));
-    setQueryParam(current, 'query', searchQuery);
-    const search = current.toString();
-    const query = search ? `?${search}` : '';
+  const updateSearch = (searchQuery: string, currentSearchParams: URLSearchParams, isReload = false) => {
+    const newQuery = updateGetQuery('query', searchQuery, currentSearchParams);
     if (isReload) {
-      router.push(`${pathname}${query}`, { scroll: false });
+      router.push(`${pathname}${newQuery}`, { scroll: false });
       return;
     }
-    router.replace(`${pathname}${query}`, { scroll: false });
+    router.replace(`${pathname}${newQuery}`, { scroll: false });
   };
 
   const { text } = props;
@@ -46,7 +43,9 @@ export function SearchBar(props: ISearchBarProps) {
       leftSectionPointerEvents="none"
       leftSection={icon}
       rightSectionWidth={88}
-      rightSection={<PrimaryButton text="Search" size="small" onClickEvent={() => updateSearch(searchQuery, true)} />}
+      rightSection={
+        <PrimaryButton text="Search" size="small" onClickEvent={() => updateSearch(searchQuery, searchParams, true)} />
+      }
       defaultValue={text}
       onChange={(e) => {
         setSearchQuery(e.currentTarget.value);
