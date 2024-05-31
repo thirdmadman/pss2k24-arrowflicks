@@ -14,7 +14,6 @@ interface IMovieCardProps {
   title: string;
   year: number;
   rating: number | undefined;
-  userRating: number | undefined;
   reviewsCount: number | undefined;
   genres: Array<string> | undefined;
 }
