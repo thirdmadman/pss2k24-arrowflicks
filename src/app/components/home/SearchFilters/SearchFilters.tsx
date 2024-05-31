@@ -3,6 +3,8 @@ import { InputNumber } from '../../shared/InputNumber/InputNumber';
 import { MultiSelectInput } from '../../shared/MultiSelectInput/MultiSelectInput';
 import { ResetFilters } from '../../shared/ResetFilters/ResetFilters';
 import { SearchBar } from '../../shared/SearchBar/SearchBar';
+import { SelectInput } from '../../shared/SelectInput/SelectInput';
+import { sortByMap } from '@/lib/utils/sortByMap';
 
 interface ISearchFiltersProps {
   query?: string;
@@ -31,12 +33,13 @@ export function SearchFilters(props: ISearchFiltersProps) {
           options={['Drama', 'Comedy', 'Animation', 'Thriller', 'Fantasy']}
           placeholder="Select genre"
         />
-        <MultiSelectInput
+        <SelectInput
+          placeholder="Select release year"
           queryKey="releaseYear"
           value={releaseYear}
           label={'Release year'}
           options={['1990', '2000', '2010', '2020']}
-          placeholder="Select release year"
+          allowDeselect
         />
         <Stack gap="8px" justify="space-between">
           <Text fw="bold" size="16px" lh="22px">
@@ -48,17 +51,25 @@ export function SearchFilters(props: ISearchFiltersProps) {
               max={10}
               value={ratingFrom ? parseInt(ratingFrom, 10) : undefined}
               placeholder="From"
+              queryKey="ratingFrom"
             />
-            <InputNumber min={0} max={10} value={ratingTo ? parseInt(ratingTo, 10) : undefined} placeholder="To" />
+            <InputNumber
+              min={0}
+              max={10}
+              value={ratingTo ? parseInt(ratingTo, 10) : undefined}
+              placeholder="To"
+              queryKey="ratingTo"
+            />
           </Group>
         </Stack>
-        <MultiSelectInput
+        <SelectInput
+          placeholder="Select sort by"
           queryKey="sortBy"
-          maxOptions={1}
           value={sortBy ?? 'Most popular'}
           label={'Sort by'}
-          options={['Most popular', 'Less popular', 'Most Rating', 'Less Rating']}
-          placeholder="Sort by"
+          options={sortByMap}
+          defaultValueIndex={1}
+          allowDeselect={false}
         />
         <ResetFilters />
       </Flex>
