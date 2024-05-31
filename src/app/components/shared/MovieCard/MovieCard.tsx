@@ -2,6 +2,8 @@ import { Group, Paper, Stack, Title, Text, Flex } from '@mantine/core';
 import Image from 'next/image';
 import { MyRatingNumber } from '../MyRatingNumber/MyRatingNumber';
 import { RatingNumber } from '../RatingNumber/RatingNumber';
+import Link from 'next/link';
+import classes from '@/app/components/shared/MovieCard/Link.module.css';
 
 interface IMovieCardProps {
   movieId: string;
@@ -37,9 +39,12 @@ export function MovieCard(props: IMovieCardProps) {
         <Flex direction="column" w="100%" justify="space-between" mih={170} gap="8px">
           <Stack gap="8px">
             <Group wrap="nowrap" justify="space-between">
-              <Title c="purple.5" order={3}>
-                {title}
-              </Title>
+              <Link href={`/movies/${movieId}`} className={classes.link}>
+                <Title c="purple.5" order={3}>
+                  {title}
+                </Title>
+              </Link>
+
               <div style={{ alignSelf: 'flex-start' }}>
                 <MyRatingNumber data-test-id="MyRatingNumber" movieId={movieId} movieName={title} />
               </div>
