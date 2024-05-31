@@ -6,7 +6,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { updateGetQuery } from '@/lib/utils/updateGetQuery';
 
 interface IInputNumberProps {
-  value: number | undefined;
+  value?: number;
   placeholder: string;
   min: number;
   max: number;
@@ -35,7 +35,7 @@ export function InputNumber(props: IInputNumberProps) {
       maw="150px"
       w="100%"
       data-test-id="InputNumberInput"
-      defaultValue={value}
+      value={value ?? ''}
       placeholder={placeholder}
       onChange={(val) => updateQuery(val.toString(), searchParams, true)}
       classNames={{

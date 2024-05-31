@@ -23,11 +23,10 @@ export function MultiSelectInput(props: IMultiSelectProps) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
-  const values = value?.split(';') ?? [];
-  const [selectedValues, setSelectedValues] = useState<Array<string>>(values);
+  const values = value && value.length > 0 ? value.split(';') : [];
   const [isDropDownOpened, setIsDropDownOpened] = useState(false);
 
-  const isAnyOptionSelected = selectedValues.length > 0;
+  const isAnyOptionSelected = values.length > 0;
   const colorGrey = getColor('grey', 5);
   const colorPurple = getColor('purple', 5);
 
@@ -56,13 +55,12 @@ export function MultiSelectInput(props: IMultiSelectProps) {
       label={label}
       placeholder={isAnyOptionSelected ? undefined : placeholder}
       data={options}
-      value={selectedValues}
+      value={values}
       onDropdownClose={() => setIsDropDownOpened(false)}
       onDropdownOpen={() => setIsDropDownOpened(true)}
       defaultValue={values}
       rightSection={icon}
       onChange={(res) => {
-        setSelectedValues(res);
         updateQuery(res.join(';'), searchParams, true);
       }}
       classNames={{

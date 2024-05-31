@@ -35,7 +35,6 @@ export function SelectInput(props: ISelectInputProps) {
     }
   }
 
-  const [selectedValue, setSelectedValue] = useState<string | null>(value ? value : defaultValue ?? null);
   const [isDropDownOpened, setIsDropDownOpened] = useState(false);
 
   const colorGrey = getColor('grey', 5);
@@ -66,15 +65,13 @@ export function SelectInput(props: ISelectInputProps) {
       label={label}
       placeholder={placeholder}
       data={options}
-      value={selectedValue}
+      value={(value ? value : defaultValue) ?? null}
       onDropdownClose={() => setIsDropDownOpened(false)}
       onDropdownOpen={() => setIsDropDownOpened(true)}
       defaultValue={defaultValue}
       rightSection={icon}
       allowDeselect={allowDeselect}
       onChange={(res) => {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        setSelectedValue(res);
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         res && updateQuery(res, searchParams, true);
       }}
