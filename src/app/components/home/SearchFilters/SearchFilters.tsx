@@ -47,14 +47,14 @@ export function SearchFilters(props: ISearchFiltersProps) {
           </Text>
           <Group wrap="nowrap">
             <InputNumber
-              min={0}
+              min={1}
               max={10}
               value={ratingFrom ? parseInt(ratingFrom, 10) : undefined}
               placeholder="From"
               queryKey="ratingFrom"
             />
             <InputNumber
-              min={0}
+              min={1}
               max={10}
               value={ratingTo ? parseInt(ratingTo, 10) : undefined}
               placeholder="To"
@@ -68,7 +68,7 @@ export function SearchFilters(props: ISearchFiltersProps) {
           value={sortBy ?? 'Most popular'}
           label={'Sort by'}
           options={sortByMap}
-          defaultValueIndex={1}
+          defaultValueIndex={0}
           allowDeselect={false}
         />
         <ResetFilters />
