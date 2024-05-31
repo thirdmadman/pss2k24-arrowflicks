@@ -1,0 +1,57 @@
+.root {
+  max-height: unset;
+}
+
+.label {
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: var(--mantine-color-black);
+}
+
+.input {
+  height: unset;
+  line-height: 20px;
+  padding: 10px 12px;
+  padding-right: 48px;
+  border-radius: 8px;
+  border: 1px solid var(--mantine-color-grey-5);
+  &:focus-within {
+    border: 1px solid var(--mantine-color-purple-5);
+  }
+  transition: border 0.2s ease-out;
+  &:hover {
+    border: 1px solid var(--mantine-color-purple-5);
+  }
+}
+
+.option {
+  margin-bottom: 4px;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--mantine-color-black);
+
+  &[data-checked="true"] {
+    color: var(--mantine-color-white);
+    background-color: var(--mantine-color-purple-5);
+  }
+
+  &:hover {
+    color: var(--mantine-color-black);
+    background-color: var(--mantine-color-purple-1);
+  }
+  
+  transition: background-color 0.2s ease-out, color  0.2s ease-out;
+}
+
+
+.inputFieldDisabled {
+  width: 1px;
+}
+
+.section {
+  padding-right: 12px;
+}
