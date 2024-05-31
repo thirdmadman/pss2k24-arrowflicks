@@ -20,7 +20,6 @@ interface IMultiSelectProps {
 
 export function MultiSelectInput(props: IMultiSelectProps) {
   const { value, label, options, placeholder, maxOptions, queryKey } = props;
-  console.error(props);
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
