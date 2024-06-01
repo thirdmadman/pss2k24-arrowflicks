@@ -40,7 +40,7 @@ export function MovieCard(props: IMovieCardProps) {
             <Group wrap="nowrap" justify="space-between">
               <Link href={`/movies/${movieId}`} className={classes.link}>
                 <Title c="purple.5" order={3}>
-                  {title}
+                  {title.length > 50 ? `${title.slice(0, 50)}...` : title}
                 </Title>
               </Link>
 
