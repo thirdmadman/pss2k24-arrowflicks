@@ -26,7 +26,7 @@ export function MyRatingNumber(props: IRatingNumberProps) {
     if (Boolean(moviesRating) && moviesRating.length >= 0) {
       setUserRating(moviesRating.find((el) => el.movieId === movieId) ?? null);
     }
-  }, [isModalOpened]);
+  }, [isModalOpened, movieId]);
 
   if (userRating === null) {
     starIcon = <IconStar color={getColor('grey', 3)} />;
