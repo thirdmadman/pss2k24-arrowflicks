@@ -10,5 +10,5 @@ export async function getGenresFetchMap() {
     next: { revalidate: 60 * 60 * 24 },
   });
   const result = (await response.json()) as IGenresResponse;
-  return result.genres.map((el) => ({ value: el.id, label: el.name }));
+  return result.genres.map((el) => ({ value: el.id.toString(), label: el.name }));
 }
