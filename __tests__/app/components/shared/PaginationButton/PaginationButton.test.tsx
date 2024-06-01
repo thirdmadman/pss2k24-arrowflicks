@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { render } from '../../../test-utils/render';
+import { render } from '../../../../test-utils/render';
 import { PaginationButton } from '@/app/components/shared/PaginationButton/PaginationButton';
 
 describe('PaginationButton component', () => {
