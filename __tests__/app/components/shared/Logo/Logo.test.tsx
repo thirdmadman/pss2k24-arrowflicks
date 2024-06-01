@@ -1,6 +1,6 @@
 import { Logo } from '@/app/components/shared/Logo/Logo';
 import { screen } from '@testing-library/react';
-import { render } from '../../../test-utils/render';
+import { render } from '../../../../test-utils/render';
 
 describe('Logo component', () => {
   beforeAll(() => {
