@@ -45,7 +45,7 @@ describe('Home page', () => {
       };
     });
 
-    vi.mock('@/app/components/home//SearchFilters/SearchFilters.tsx', () => ({
+    vi.mock('@/app/components/home/SearchFilters/SearchFilters.tsx', () => ({
       SearchFilters: () => <div>SearchFilters</div>,
     }));
 
