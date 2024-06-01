@@ -14,8 +14,8 @@ interface ISearchFiltersProps {
   genres?: string;
 }
 
-export async function SearchFilters(props: ISearchFiltersProps) {
-  const { ratingFrom, ratingTo, sortBy, releaseYear, genres } = props;
+export async function SearchFilters({ searchParams }: { searchParams: ISearchFiltersProps }) {
+  const { ratingFrom, ratingTo, sortBy, releaseYear, genres } = searchParams;
 
   const currentYear = new Date().getFullYear();
   const minYear = 1895;

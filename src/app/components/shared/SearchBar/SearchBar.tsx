@@ -10,11 +10,12 @@ import { useState } from 'react';
 import { updateGetQuery } from '@/lib/utils/updateGetQuery';
 
 interface ISearchBarProps {
-  text: string | undefined;
+  query?: string;
 }
 
-export function SearchBar(props: ISearchBarProps) {
-  const searchParams = useSearchParams();
+export function SearchBar({ searchParams }: { searchParams: ISearchBarProps }) {
+  const { query } = searchParams;
+  const urlSearchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
@@ -27,8 +28,6 @@ export function SearchBar(props: ISearchBarProps) {
     }
     router.replace(`${pathname}${newQuery}`, { scroll: false });
   };
-
-  const { text } = props;
 
   const greyColor = getColor('grey', 6);
   const icon = (
@@ -44,9 +43,13 @@ export function SearchBar(props: ISearchBarProps) {
       leftSection={icon}
       rightSectionWidth={88}
       rightSection={
-        <PrimaryButton text="Search" size="small" onClickEvent={() => updateSearch(searchQuery, searchParams, true)} />
+        <PrimaryButton
+          text="Search"
+          size="small"
+          onClickEvent={() => updateSearch(searchQuery, urlSearchParams, true)}
+        />
       }
-      defaultValue={text}
+      defaultValue={query}
       onChange={(e) => {
         setSearchQuery(e.currentTarget.value);
       }}
