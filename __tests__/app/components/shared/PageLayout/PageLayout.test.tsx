@@ -1,6 +1,6 @@
 import { PageLayout } from '@/app/components/shared/PageLayout/PageLayout';
 import { screen } from '@testing-library/react';
-import { render } from '../../../test-utils/render';
+import { render } from '../../../../test-utils/render';
 
 describe('PageLayout component', () => {
   beforeAll(() => {
