@@ -1,5 +1,7 @@
+import { IMovieDiscoverResponse } from '@/types/interfaces/IMovieDiscoverResponse';
+
 /* eslint-disable prettier/prettier */
-export const moviesDiscoverResponseMock = {
+export const moviesDiscoverResponseMock: IMovieDiscoverResponse = {
   page: 1,
   results: [
     {
