@@ -14,7 +14,9 @@ interface ISearchFiltersProps {
   genres?: string;
 }
 
-export async function SearchFilters({ searchParams }: { searchParams: ISearchFiltersProps }) {
+export async function SearchFilters(props: { searchParams: ISearchFiltersProps }) {
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  const searchParams = props?.searchParams || {};
   const { ratingFrom, ratingTo, sortBy, releaseYear, genres } = searchParams;
 
   const currentYear = new Date().getFullYear();

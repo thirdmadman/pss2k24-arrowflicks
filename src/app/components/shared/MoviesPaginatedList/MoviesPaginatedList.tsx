@@ -5,9 +5,7 @@ import { IMAGES_POSTERS_BASE } from '@/constants';
 import { Pagination } from '@/app/components/shared/Pagination/Pagination';
 import { getGenresFetchMap } from '@/lib/utils/getGenresFetchMap';
 
-export async function MoviesPaginatedList({
-  searchParams,
-}: {
+export async function MoviesPaginatedList(props: {
   searchParams?: {
     query?: string;
     ratingFrom?: string;
@@ -18,6 +16,9 @@ export async function MoviesPaginatedList({
     genres?: string;
   };
 }) {
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  const searchParams = props?.searchParams;
+
   const ratingFrom = searchParams?.ratingFrom ?? '';
   const ratingTo = searchParams?.ratingTo ?? '';
   const sortBy = searchParams?.sortBy ?? '';
