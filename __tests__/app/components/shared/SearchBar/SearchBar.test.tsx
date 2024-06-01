@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
-import { render } from '../../../test-utils/render';
 import { SearchBar } from '@/app/components/shared/SearchBar/SearchBar';
+import { render } from '../../../../test-utils/render';
 
 describe('SearchBar component', () => {
   vi.mock('next/navigation', async () => {
@@ -27,12 +27,12 @@ describe('SearchBar component', () => {
   });
 
   it('should render without failing', () => {
-    const { container } = render(<SearchBar text={''} />);
+    const { container } = render(<SearchBar searchParams={{ query: '' }} />);
     expect(container.firstElementChild).not.toBeNull();
   });
 
   it('should contain correct value', () => {
-    render(<SearchBar text={'SearchBarValue'} />);
+    render(<SearchBar searchParams={{ query: 'SearchBarValue' }} />);
     expect(screen.getByDisplayValue('SearchBarValue')).not.toBeNull();
   });
 });
