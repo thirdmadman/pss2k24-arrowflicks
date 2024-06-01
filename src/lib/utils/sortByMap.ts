@@ -1,8 +1,8 @@
 export const sortByMap = [
   { value: 'original_title.asc', label: 'Title (A-Z)' },
   { value: 'original_title.desc', label: 'Title (Z-A)' },
-  { value: 'popularity.asc', label: 'Most Popular' },
-  { value: 'popularity.desc', label: 'Least Popular' },
+  { value: 'popularity.asc', label: 'Least Popular' },
+  { value: 'popularity.desc', label: 'Most Popular' },
   { value: 'revenue.asc', label: 'Revenue (Low to High)' },
   { value: 'revenue.desc', label: 'Revenue (High to Low)' },
   { value: 'primary_release_date.asc', label: 'Release Date (Oldest to Newest)' },
