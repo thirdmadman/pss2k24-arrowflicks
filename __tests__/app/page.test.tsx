@@ -47,12 +47,12 @@ describe('Home page', () => {
   });
 
   it('should render without failing', () => {
-    const { container } = render(Home({}));
+    const { container } = render(Home({ searchParams: {} }));
     expect(container.firstElementChild).not.toBeNull();
   });
 
   it('should contain title', () => {
-    render(Home({}));
+    render(Home({ searchParams: {} }));
     expect(screen.getByText('ArrowFlicks - Movies')).not.toBeNull();
   });
 });
