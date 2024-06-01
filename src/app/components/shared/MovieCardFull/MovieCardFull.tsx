@@ -12,7 +12,6 @@ interface IMovieCardFullProps {
   title: string;
   year: number;
   rating: number | undefined;
-  userRating: number | undefined;
   reviewsCount: number | undefined;
   duration: string;
   premiere: string;
