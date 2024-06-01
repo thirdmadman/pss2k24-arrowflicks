@@ -1,0 +1,11 @@
+.root {
+  &:hover {
+    scale: 1.1;
+  }
+
+  &:disabled,
+  &[disabled] {
+    cursor: auto;
+    pointer-events: none;
+  }
+}

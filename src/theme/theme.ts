@@ -1,4 +1,4 @@
-import { DefaultMantineColor, MantineColorShade, MantineColorsTuple, MantineThemeOverride } from '@mantine/core';
+import { MantineColorShade, MantineColorsTuple, MantineThemeOverride, createTheme } from '@mantine/core';
 const white: MantineColorsTuple = [
   '#FFFFFF',
   '#FFFFFF',
@@ -12,14 +12,14 @@ const white: MantineColorsTuple = [
   '#FFFFFF',
 ];
 
-const gray: MantineColorsTuple = [
+const grey: MantineColorsTuple = [
   '#F5F5F6',
-  '#F5F5F6', // Gray 100
-  '#EAEBED', // Gray 200
-  '#D5D6DC', // Gray 300
-  '#ACADB9', // Gray 400
-  '#7B7C88', // Gray 500
-  '#7B7C88', // Gray 600
+  '#F5F5F6', // Grey 100
+  '#EAEBED', // Grey 200
+  '#D5D6DC', // Grey 300
+  '#ACADB9', // Grey 400
+  '#7B7C88', // Grey 500
+  '#7B7C88', // Grey 600
   '#7B7C88',
   '#7B7C88',
   '#7B7C88',
@@ -54,21 +54,19 @@ const purple: MantineColorsTuple = [
 const colors = {
   purple,
   black,
-  gray,
+  grey,
   white,
 };
 
-export const getColor = (
-  name: keyof typeof colors | DefaultMantineColor,
-  index: MantineColorShade,
-  defaultColor = '#ffffff'
-) =>
+export const getColor = (name: keyof typeof colors, index: MantineColorShade, defaultColor = '#ffffff') =>
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   theme.colors?.[name]?.[index] ?? defaultColor;
 
-const theme: MantineThemeOverride = {
+const themeOverride: MantineThemeOverride = {
   colors,
   fontFamily: 'Inter, sans-serif',
 };
+
+const theme: MantineThemeOverride = createTheme(themeOverride);
 
 export default theme;

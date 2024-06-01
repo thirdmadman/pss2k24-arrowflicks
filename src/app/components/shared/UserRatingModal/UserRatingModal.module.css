@@ -1,0 +1,7 @@
+.header {
+  padding: 16px;
+  padding-right: 11px;
+  font-size: 16px;
+  line-height: 22px;
+  border-bottom: 1px solid var(--mantine-color-grey-2);
+}

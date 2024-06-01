@@ -1,0 +1,16 @@
+export const sortByMap = [
+  { value: 'original_title.asc', label: 'Title (A-Z)' },
+  { value: 'original_title.desc', label: 'Title (Z-A)' },
+  { value: 'popularity.asc', label: 'Least Popular' },
+  { value: 'popularity.desc', label: 'Most Popular' },
+  { value: 'revenue.asc', label: 'Revenue (Low to High)' },
+  { value: 'revenue.desc', label: 'Revenue (High to Low)' },
+  { value: 'primary_release_date.asc', label: 'Release Date (Oldest to Newest)' },
+  { value: 'primary_release_date.desc', label: 'Release Date (Newest to Oldest)' },
+  { value: 'title.asc', label: 'Title (A-Z)' },
+  { value: 'title.desc', label: 'Title (Z-A)' },
+  { value: 'vote_average.asc', label: 'Rating (Low to High)' },
+  { value: 'vote_average.desc', label: 'Rating (High to Low)' },
+  { value: 'vote_count.asc', label: 'Vote Count (Low to High)' },
+  { value: 'vote_count.desc', label: 'Vote Count (High to Low)' },
+];
