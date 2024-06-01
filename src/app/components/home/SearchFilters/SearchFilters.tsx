@@ -17,6 +17,12 @@ interface ISearchFiltersProps {
 
 export function SearchFilters(props: ISearchFiltersProps) {
   const { query, ratingFrom, ratingTo, sortBy, releaseYear, genres } = props;
+
+  const currentYear = new Date().getFullYear();
+  const minYear = 1895;
+  const yearsArray = new Array(currentYear - minYear).fill(1).map((el, i) => String(currentYear - i));
+  console.error('gg', yearsArray);
+
   return (
     <Stack gap="40px">
       <Group justify="space-between" wrap="nowrap" gap="40px">
@@ -38,7 +44,7 @@ export function SearchFilters(props: ISearchFiltersProps) {
           queryKey="releaseYear"
           value={releaseYear}
           label={'Release year'}
-          options={['1990', '2000', '2010', '2020']}
+          options={yearsArray}
           allowDeselect
         />
         <Stack gap="8px" justify="space-between">
