@@ -1,6 +1,6 @@
 import { Pagination } from '@/app/components/shared/Pagination/Pagination';
 import { screen } from '@testing-library/react';
-import { render } from '../../../test-utils/render';
+import { render } from '../../../../test-utils/render';
 
 describe('Pagination component', () => {
   it('should render without failing', () => {
