@@ -21,7 +21,6 @@ export function SearchFilters(props: ISearchFiltersProps) {
   const currentYear = new Date().getFullYear();
   const minYear = 1895;
   const yearsArray = new Array(currentYear - minYear).fill(1).map((el, i) => String(currentYear - i));
-  console.error('gg', yearsArray);
 
   return (
     <Stack gap="40px">
