@@ -44,6 +44,14 @@ describe('Home page', () => {
         Button: () => <button>Button</button>,
       };
     });
+
+    vi.mock('@/app/components/home//SearchFilters/SearchFilters.tsx', () => ({
+      SearchFilters: () => <div>SearchFilters</div>,
+    }));
+
+    vi.mock('@/app/components/shared/MoviesPaginatedList/MoviesPaginatedList', () => ({
+      MoviesPaginatedList: () => <div>MoviesPaginatedList</div>,
+    }));
   });
 
   it('should render without failing', () => {
@@ -53,6 +61,7 @@ describe('Home page', () => {
 
   it('should contain title', () => {
     render(Home({ searchParams: {} }));
-    expect(screen.getByText('ArrowFlicks - Movies')).not.toBeNull();
+    expect(screen.getByText('ArrowFlicks')).not.toBeNull();
+    expect(screen.findAllByTitle('Movies')).not.toBeNull();
   });
 });

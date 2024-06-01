@@ -11,7 +11,8 @@ export const metadata: Metadata = {
   description: 'ArrowFlicks - Movies',
 };
 
-export default function Home({ searchParams }: { searchParams: { [key: string]: string } }) {
+export default function Home(props: { searchParams: { [key: string]: string } }) {
+  const { searchParams } = props;
   return (
     <>
       <PageLayout>
@@ -24,9 +25,10 @@ export default function Home({ searchParams }: { searchParams: { [key: string]: 
               <SearchBar searchParams={searchParams} />
             </Group>
             <Stack>
-              <SearchFilters searchParams={searchParams} />
+              <Suspense>
+                <SearchFilters searchParams={searchParams} />
+              </Suspense>
             </Stack>
-
             <Suspense>
               <MoviesPaginatedList searchParams={searchParams} />
             </Suspense>
