@@ -1,6 +1,6 @@
 import { PrimaryButton } from '@/app/components/shared/PrimaryButton/PrimaryButton';
 import { screen } from '@testing-library/react';
-import { render } from '../../../test-utils/render';
+import { render } from '../../../../test-utils/render';
 
 describe('PrimaryButton component', () => {
   it('should render without failing', () => {
