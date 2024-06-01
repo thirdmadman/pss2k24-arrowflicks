@@ -12,7 +12,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 interface IMultiSelectProps {
   label: string;
   placeholder: string;
-  options: Array<string>;
+  options: Array<string> | Array<{ value: string; label: string }>;
   queryKey: string;
   value?: string;
   maxOptions?: number;
