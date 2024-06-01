@@ -48,7 +48,7 @@ export function SelectInput(props: ISelectInputProps) {
     </Center>
   );
 
-  const updateQuery = (value: string, currentSearchParams: URLSearchParams, isReload = false) => {
+  const updateQuery = (value: string | undefined, currentSearchParams: URLSearchParams, isReload = false) => {
     const newQuery = updateGetQuery(queryKey, value, currentSearchParams);
     if (isReload) {
       router.push(`${pathname}${newQuery}`, { scroll: false });
@@ -73,7 +73,7 @@ export function SelectInput(props: ISelectInputProps) {
       allowDeselect={allowDeselect}
       onChange={(res) => {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        res && updateQuery(res, searchParams, true);
+        updateQuery(res ?? undefined, searchParams, true);
       }}
       classNames={{
         root: classes.root,
