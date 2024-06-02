@@ -3,7 +3,6 @@ import { Metadata } from 'next';
 import { PageLayout } from './components/shared/PageLayout/PageLayout';
 import { SearchFilters } from './components/home/SearchFilters/SearchFilters';
 import { Suspense } from 'react';
-import { SearchBar } from './components/shared/SearchBar/SearchBar';
 import { MoviesPaginatedList } from './components/shared/MoviesPaginatedList/MoviesPaginatedList';
 
 export const metadata: Metadata = {
@@ -22,7 +21,6 @@ export default function Home(props: { searchParams: { [key: string]: string } })
               <Title size="32px" lh="45px" c="black" order={1} fw="bold">
                 Movies
               </Title>
-              <SearchBar searchParams={searchParams} />
             </Group>
             <Stack>
               <Suspense>

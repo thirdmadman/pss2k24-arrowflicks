@@ -1,4 +1,5 @@
 import { IMovieDiscoverResponse } from '@/types/interfaces/IMovieDiscoverResponse';
+import { moviesDiscoverResponseMock } from '../../../__tests__/mocks/moviesDiscoverResponseMock';
 
 export async function getMovieDiscoveryPaginatedList(
   filters: {
@@ -10,6 +11,9 @@ export async function getMovieDiscoveryPaginatedList(
   },
   pagination: { page?: string }
 ) {
+  if (process.env.IS_FAKE_API) {
+    return moviesDiscoverResponseMock;
+  }
   const { ratingFrom, ratingTo, sortBy, releaseYear, genres } = filters;
   const { page } = pagination;
 
