@@ -15,7 +15,7 @@ const inter = Inter({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={inter.className} style={{ height: '100%' }}>
       <head>
         <ColorSchemeScript />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="shortcut icon" href="/favicon.ico" />
       </head>
-      <body>
+      <body style={{ height: '100%' }}>
         <MantineProvider withGlobalClasses theme={theme}>
           {children}
         </MantineProvider>
