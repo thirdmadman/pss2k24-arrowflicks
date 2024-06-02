@@ -17,12 +17,14 @@ const getStudioCard = (studioName: string, studioLogoImage: string | undefined) 
   return (
     <Group key={studioName} gap="8px">
       <Image
-        src={studioLogoImage ?? 'images/no-poster-placeholder.svg'}
+        src={studioLogoImage ?? '/images/no-poster-placeholder.svg'}
         alt={studioName}
-        width={40}
-        height={40}
+        width={100}
+        height={100}
         style={{
-          objectFit: 'cover',
+          width: '40px',
+          height: '40px',
+          objectFit: 'contain',
           borderRadius: '100%',
           border: `1px solid ${getColor('grey', 1)}`,
         }}
