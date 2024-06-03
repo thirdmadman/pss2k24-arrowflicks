@@ -1,11 +1,24 @@
 import { screen } from '@testing-library/react';
 import { render } from '../../../../test-utils/render';
 import { MyRatingNumber } from '@/app/components/shared/MyRatingNumber/MyRatingNumber';
-import { LOCAL_STORAGE_ITEM_NAME } from '@/constants';
+import { LOCAL_STORAGE_CONFIGS_VERSION, LOCAL_STORAGE_ITEM_NAME } from '@/constants';
 
 describe('MyRatingNumber component', () => {
   it('should render without failing', () => {
-    const { container } = render(<MyRatingNumber movieId="" movieName="" />);
+    const { container } = render(
+      <MyRatingNumber
+        movieId=""
+        title=""
+        image={{
+          src: undefined,
+          alt: '',
+        }}
+        year={0}
+        rating={undefined}
+        reviewsCount={undefined}
+        genres={undefined}
+      />
+    );
     expect(container.firstElementChild).not.toBeNull();
   });
 
@@ -15,13 +28,26 @@ describe('MyRatingNumber component', () => {
       JSON.stringify({
         isExists: true,
         userData: {
-          userMoviesRating: [{ movieId: '501', movieName: 'The Green Mile', rating: 5 }],
+          userMoviesRating: [{ movieId: '501', movieName: 'The Green Mile', myRating: 5 }],
           lastSearchQuery: null,
         },
-        version: '0.1',
+        version: LOCAL_STORAGE_CONFIGS_VERSION,
       })
     );
-    render(<MyRatingNumber movieId="501" movieName="The Green Mile" />);
+    render(
+      <MyRatingNumber
+        movieId="501"
+        title="The Green Mile"
+        image={{
+          src: undefined,
+          alt: '',
+        }}
+        year={0}
+        rating={undefined}
+        reviewsCount={undefined}
+        genres={undefined}
+      />
+    );
     expect(screen.getByText('5')).not.toBeNull();
   });
 });

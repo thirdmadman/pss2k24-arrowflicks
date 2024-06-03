@@ -7,11 +7,16 @@ describe('UserRatingModal component', () => {
     const { container } = render(
       <UserRatingModal
         movieId={'500'}
-        movieName={'movieName'}
+        title={'movieName'}
         modalState={false}
         existingRating={undefined}
         // eslint-disable-next-line @typescript-eslint/no-empty-function
         setModalState={() => {}}
+        image={undefined}
+        year={0}
+        rating={undefined}
+        reviewsCount={undefined}
+        genres={undefined}
       />
     );
     expect(container.firstElementChild).not.toBeNull();
@@ -21,11 +26,16 @@ describe('UserRatingModal component', () => {
     render(
       <UserRatingModal
         movieId={'500'}
-        movieName={'movieName'}
+        title={'movieName'}
         modalState={true}
         existingRating={undefined}
         // eslint-disable-next-line @typescript-eslint/no-empty-function
         setModalState={() => {}}
+        image={undefined}
+        year={0}
+        rating={undefined}
+        reviewsCount={undefined}
+        genres={undefined}
       />
     );
     expect(screen.getByText('movieName')).not.toBeNull();
