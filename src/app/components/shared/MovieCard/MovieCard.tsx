@@ -45,7 +45,19 @@ export function MovieCard(props: IMovieCardProps) {
               </Link>
 
               <div style={{ alignSelf: 'flex-start' }}>
-                <MyRatingNumber data-test-id="MyRatingNumber" movieId={movieId} movieName={title} />
+                <MyRatingNumber
+                  data-test-id="MyRatingNumber"
+                  movieId={movieId}
+                  title={title}
+                  image={{
+                    src: image.src,
+                    alt: image.alt,
+                  }}
+                  year={year}
+                  rating={rating}
+                  reviewsCount={reviewsCount}
+                  genres={genres}
+                />
               </div>
             </Group>
             {year && (

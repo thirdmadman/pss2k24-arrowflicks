@@ -38,6 +38,7 @@ export function SearchBar({ searchParams }: { searchParams: ISearchBarProps }) {
   return (
     <TextInput
       miw="300px"
+      maw="490px"
       w="100%"
       leftSectionPointerEvents="none"
       leftSection={icon}
