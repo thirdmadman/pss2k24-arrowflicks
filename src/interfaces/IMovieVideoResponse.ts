@@ -5,7 +5,7 @@ export interface IVideo {
   key: string;
   site: string;
   size: number;
-  type: 'Trailer' | 'Featurette' | 'Teaser';
+  type: 'Trailer' | 'Featurette' | 'Teaser' | 'Clip' | 'Behind the Scenes';
   official: boolean;
   published_at: string;
   id: string;
