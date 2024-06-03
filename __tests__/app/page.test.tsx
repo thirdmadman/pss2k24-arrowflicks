@@ -49,7 +49,7 @@ describe('Home page', () => {
       SearchFilters: () => <div>SearchFilters</div>,
     }));
 
-    vi.mock('@/app/components/shared/MoviesPaginatedList/MoviesPaginatedList', () => ({
+    vi.mock('@/app/components/home/MoviesPaginatedList/MoviesPaginatedList', () => ({
       MoviesPaginatedList: () => <div>MoviesPaginatedList</div>,
     }));
   });

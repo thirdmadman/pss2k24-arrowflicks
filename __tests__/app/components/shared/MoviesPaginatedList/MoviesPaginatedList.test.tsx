@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { render } from '../../../../test-utils/render';
-import { MoviesPaginatedList } from '@/app/components/shared/MoviesPaginatedList/MoviesPaginatedList';
+import { MoviesPaginatedList } from '@/app/components/home/MoviesPaginatedList/MoviesPaginatedList';
 import { getGenresFetchMapMock } from '../../../../mocks/getGenresFetchMapMock';
 import { moviesDiscoverResponseMock } from '../../../../mocks/moviesDiscoverResponseMock';
 
