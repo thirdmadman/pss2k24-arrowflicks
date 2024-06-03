@@ -4,8 +4,8 @@ import { MovieCardFull } from '@/app/components/shared/MovieCardFull/MovieCardFu
 import { PageLayout } from '@/app/components/shared/PageLayout/PageLayout';
 import { IMAGES_POSTERS_BASE } from '@/constants';
 import { extractYtTrailerKey } from '@/lib/utils/extractYtTrailerKey';
-import { getMoveDetails } from '@/lib/utils/getMoveDetails';
-import { getMoveVideos } from '@/lib/utils/getMoveVideos';
+import { getMoveDetails } from '@/lib/api/getMoveDetails';
+import { getMoveVideos } from '@/lib/api/getMoveVideos';
 import { formatCost, formatDate, formatDuration } from '@/lib/utils/textFromatUtils';
 import { Container, Stack } from '@mantine/core';
 import { Metadata } from 'next';

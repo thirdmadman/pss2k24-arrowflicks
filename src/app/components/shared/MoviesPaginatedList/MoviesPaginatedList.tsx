@@ -1,9 +1,9 @@
 import { Flex, Stack } from '@mantine/core';
 import { MovieCard } from '@/app/components/shared/MovieCard/MovieCard';
-import { getMovieDiscoveryPaginatedList } from '@/lib/utils/getMovieDiscoveryPaginatedList';
+import { getMovieDiscoveryPaginatedList } from '@/lib/api/getMovieDiscoveryPaginatedList';
 import { IMAGES_POSTERS_BASE } from '@/constants';
 import { Pagination } from '@/app/components/shared/Pagination/Pagination';
-import { getGenresFetchMap } from '@/lib/utils/getGenresFetchMap';
+import { getGenresFetchMap } from '@/lib/api/getGenresFetchMap';
 
 export async function MoviesPaginatedList(props: {
   searchParams?: {

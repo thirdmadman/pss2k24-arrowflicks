@@ -4,7 +4,7 @@ import { MultiSelectInput } from '../../shared/MultiSelectInput/MultiSelectInput
 import { ResetFilters } from '../../shared/ResetFilters/ResetFilters';
 import { SelectInput } from '../../shared/SelectInput/SelectInput';
 import { sortByMap } from '@/lib/utils/sortByMap';
-import { getGenresFetchMap } from '@/lib/utils/getGenresFetchMap';
+import { getGenresFetchMap } from '@/lib/api/getGenresFetchMap';
 
 interface ISearchFiltersProps {
   ratingFrom?: string;
