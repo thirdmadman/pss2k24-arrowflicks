@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { render } from '../../../../test-utils/render';
-import { MovieCardFull } from '@/app/components/shared/MovieCardFull/MovieCardFull';
+import { MovieCardFull } from '@/app/components/movie-id/MovieCardFull/MovieCardFull';
 
 describe('MovieCardFull component', () => {
   it('should render without failing', () => {

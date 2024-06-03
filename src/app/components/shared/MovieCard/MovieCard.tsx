@@ -1,7 +1,7 @@
 import { Group, Paper, Stack, Title, Text, Flex } from '@mantine/core';
 import Image from 'next/image';
-import { MyRatingNumber } from '../MyRatingNumber/MyRatingNumber';
-import { RatingNumber } from '../RatingNumber/RatingNumber';
+import { MyRatingNumber } from '@/app/components/shared/MyRatingNumber/MyRatingNumber';
+import { RatingNumber } from '@/app/components/shared/RatingNumber/RatingNumber';
 import Link from 'next/link';
 import classes from '@/app/components/shared/MovieCard/Link.module.css';
 

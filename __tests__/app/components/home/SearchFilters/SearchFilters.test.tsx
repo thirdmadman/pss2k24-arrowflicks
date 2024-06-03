@@ -5,7 +5,7 @@ import { getGenresFetchMapMock } from '../../../../mocks/getGenresFetchMapMock';
 
 describe('SearchFilters component', () => {
   beforeAll(() => {
-    vi.mock('@/lib/utils/getGenresFetchMap', () => ({
+    vi.mock('@/lib/api/getGenresFetchMap', () => ({
       getGenresFetchMap: () => getGenresFetchMapMock,
     }));
 

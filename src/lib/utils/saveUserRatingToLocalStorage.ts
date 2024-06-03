@@ -1,5 +1,5 @@
 import { IUserMovieRating } from '@/interfaces/IUserMovieRating';
-import DataLocalStorageProvider from '../services/DataLocalStorageProvider';
+import DataLocalStorageProvider from '@/lib/services/DataLocalStorageProvider';
 
 export const saveUserRatingToLocalStorage = (data: IUserMovieRating) => {
   if (!data.movieId || !data.movieName || !data.rating) {

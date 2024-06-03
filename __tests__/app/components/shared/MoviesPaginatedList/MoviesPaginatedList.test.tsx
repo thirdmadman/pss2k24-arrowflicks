@@ -1,16 +1,16 @@
 import { screen } from '@testing-library/react';
 import { render } from '../../../../test-utils/render';
-import { MoviesPaginatedList } from '@/app/components/shared/MoviesPaginatedList/MoviesPaginatedList';
+import { MoviesPaginatedList } from '@/app/components/home/MoviesPaginatedList/MoviesPaginatedList';
 import { getGenresFetchMapMock } from '../../../../mocks/getGenresFetchMapMock';
 import { moviesDiscoverResponseMock } from '../../../../mocks/moviesDiscoverResponseMock';
 
 describe('MoviesPaginatedList component', () => {
   beforeAll(() => {
-    vi.mock('@/lib/utils/getGenresFetchMap', () => ({
+    vi.mock('@/lib/api/getGenresFetchMap', () => ({
       getGenresFetchMap: () => getGenresFetchMapMock,
     }));
 
-    vi.mock('@/lib/utils/getMovieDiscoveryPaginatedList', () => ({
+    vi.mock('@/lib/api/getMovieDiscoveryPaginatedList', () => ({
       getMovieDiscoveryPaginatedList: () => moviesDiscoverResponseMock,
     }));
 

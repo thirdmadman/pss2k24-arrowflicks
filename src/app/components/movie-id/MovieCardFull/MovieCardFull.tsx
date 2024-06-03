@@ -1,7 +1,7 @@
 import { Group, Paper, Stack, Title, Text, Flex } from '@mantine/core';
 import Image from 'next/image';
-import { MyRatingNumber } from '../MyRatingNumber/MyRatingNumber';
-import { RatingNumber } from '../RatingNumber/RatingNumber';
+import { MyRatingNumber } from '@/app/components/shared/MyRatingNumber/MyRatingNumber';
+import { RatingNumber } from '@/app/components/shared/RatingNumber/RatingNumber';
 
 interface IMovieCardFullProps {
   movieId: string;
@@ -29,7 +29,7 @@ export function MovieCardFull(props: IMovieCardFullProps) {
     <Paper p="24px" radius="12px" maw={800} w="100%">
       <Group wrap="nowrap" align="flex-start">
         <Image
-          src={src ?? 'images/no-poster-placeholder.svg'}
+          src={src ?? '/images/no-poster-placeholder.svg'}
           alt={alt}
           width={250}
           height={350}

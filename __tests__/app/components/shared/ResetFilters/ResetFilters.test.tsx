@@ -1,4 +1,4 @@
-import { ResetFilters } from '@/app/components/shared/ResetFilters/ResetFilters';
+import { ResetFilters } from '@/app/components/home/ResetFilters/ResetFilters';
 import { screen } from '@testing-library/react';
 import { render } from '../../../../test-utils/render';
 

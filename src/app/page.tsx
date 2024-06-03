@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { PageLayout } from './components/shared/PageLayout/PageLayout';
 import { SearchFilters } from './components/home/SearchFilters/SearchFilters';
 import { Suspense } from 'react';
-import { MoviesPaginatedList } from './components/shared/MoviesPaginatedList/MoviesPaginatedList';
+import { MoviesPaginatedList } from './components/home/MoviesPaginatedList/MoviesPaginatedList';
 
 export const metadata: Metadata = {
   title: 'ArrowFlicks - Movies',

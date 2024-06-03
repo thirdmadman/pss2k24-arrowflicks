@@ -1,12 +1,12 @@
 'use client';
 
 import { getColor } from '@/theme/theme';
-import { IconStar } from '../icons/IconStar';
+import { IconStar } from '@/app/components/shared/icons/IconStar';
 import { Group, Text, UnstyledButton } from '@mantine/core';
 import classes from '@/app/components/shared/MyRatingNumber/MyRatingNumber.module.css';
 import DataLocalStorageProvider from '@/lib/services/DataLocalStorageProvider';
 import { IUserMovieRating } from '@/interfaces/IUserMovieRating';
-import { UserRatingModal } from '../UserRatingModal/UserRatingModal';
+import { UserRatingModal } from '@/app/components/shared/UserRatingModal/UserRatingModal';
 import { useEffect, useState } from 'react';
 
 interface IRatingNumberProps {
