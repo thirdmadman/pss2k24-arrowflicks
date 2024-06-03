@@ -1,6 +1,6 @@
 import { Flex, Stack } from '@mantine/core';
-import { TabButton } from '../TabButton/TabButton';
-import { Logo } from '../Logo/Logo';
+import { TabButton } from '@/app/components/shared/TabButton/TabButton';
+import { Logo } from '@/app/components/shared/Logo/Logo';
 
 const navigationMenu = [
   { name: 'Movies', link: '/' },

@@ -1,8 +1,8 @@
 import { Flex, Group, Stack, Text } from '@mantine/core';
-import { InputNumber } from '../../shared/InputNumber/InputNumber';
-import { MultiSelectInput } from '../../shared/MultiSelectInput/MultiSelectInput';
-import { ResetFilters } from '../../shared/ResetFilters/ResetFilters';
-import { SelectInput } from '../../shared/SelectInput/SelectInput';
+import { InputNumber } from '@/app/components/shared/InputNumber/InputNumber';
+import { MultiSelectInput } from '@/app/components/shared/MultiSelectInput/MultiSelectInput';
+import { ResetFilters } from '@/app/components/shared/ResetFilters/ResetFilters';
+import { SelectInput } from '@/app/components/shared/SelectInput/SelectInput';
 import { sortByMap } from '@/lib/utils/sortByMap';
 import { getGenresFetchMap } from '@/lib/api/getGenresFetchMap';
 

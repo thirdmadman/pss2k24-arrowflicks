@@ -4,6 +4,7 @@ import { getMovieDiscoveryPaginatedList } from '@/lib/api/getMovieDiscoveryPagin
 import { IMAGES_POSTERS_BASE } from '@/constants';
 import { Pagination } from '@/app/components/shared/Pagination/Pagination';
 import { getGenresFetchMap } from '@/lib/api/getGenresFetchMap';
+import { mapGenresIdToLabels } from '@/lib/utils/mapGenresIdToLabels';
 
 export async function MoviesPaginatedList(props: {
   searchParams?: {
@@ -33,11 +34,6 @@ export async function MoviesPaginatedList(props: {
 
   const genresMap = await getGenresFetchMap();
 
-  const mapGenres = (genresMap: Array<{ value: string; label: string }>, array: Array<number>) => {
-    const result = array.map((el) => genresMap.find((genreEl) => genreEl.value === el.toString())?.label ?? '');
-    return result;
-  };
-
   return (
     <Stack>
       <Flex direction="row" justify="space-between" align="flex-start" wrap="wrap" gap="16px">
@@ -52,7 +48,7 @@ export async function MoviesPaginatedList(props: {
             year={parseInt(el.release_date.split('-')[0], 10)}
             rating={el.vote_average}
             reviewsCount={el.vote_count}
-            genres={mapGenres(genresMap, el.genre_ids)}
+            genres={mapGenresIdToLabels(genresMap, el.genre_ids)}
             key={el.id}
           />
         ))}

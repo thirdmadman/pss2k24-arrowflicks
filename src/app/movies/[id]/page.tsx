@@ -1,6 +1,6 @@
 import { BreadcrumbsNavigation } from '@/app/components/shared/BreadcrumbsNavigation/BreadcrumbsNavigation';
-import { MovieCardDescription } from '@/app/components/shared/MovieCardFull/MovieCardDescription';
-import { MovieCardFull } from '@/app/components/shared/MovieCardFull/MovieCardFull';
+import { MovieCardDescription } from '@/app/components/movie-id/MovieCardDescription/MovieCardDescription';
+import { MovieCardFull } from '@/app/components/movie-id/MovieCardFull/MovieCardFull';
 import { PageLayout } from '@/app/components/shared/PageLayout/PageLayout';
 import { IMAGES_POSTERS_BASE } from '@/constants';
 import { extractYtTrailerKey } from '@/lib/utils/extractYtTrailerKey';
