@@ -72,7 +72,6 @@ export function SelectInput(props: ISelectInputProps) {
       rightSection={icon}
       allowDeselect={allowDeselect}
       onChange={(res) => {
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         updateQuery(res ?? undefined, searchParams, true);
       }}
       classNames={{

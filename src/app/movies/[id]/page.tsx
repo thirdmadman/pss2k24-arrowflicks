@@ -33,7 +33,6 @@ export default async function MoviePage({ params }: { params: { id: string } }) 
           <BreadcrumbsNavigation
             items={[
               { title: 'Movies', href: '/' },
-              // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
               { title: movieTitle, href: `/movies/${params.id}` },
             ]}
           />
