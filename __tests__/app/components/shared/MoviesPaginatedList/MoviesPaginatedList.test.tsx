@@ -6,11 +6,11 @@ import { moviesDiscoverResponseMock } from '../../../../mocks/moviesDiscoverResp
 
 describe('MoviesPaginatedList component', () => {
   beforeAll(() => {
-    vi.mock('@/lib/utils/getGenresFetchMap', () => ({
+    vi.mock('@/lib/api/getGenresFetchMap', () => ({
       getGenresFetchMap: () => getGenresFetchMapMock,
     }));
 
-    vi.mock('@/lib/utils/getMovieDiscoveryPaginatedList', () => ({
+    vi.mock('@/lib/api/getMovieDiscoveryPaginatedList', () => ({
       getMovieDiscoveryPaginatedList: () => moviesDiscoverResponseMock,
     }));
 
