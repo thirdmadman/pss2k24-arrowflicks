@@ -1,6 +1,11 @@
 import { IMovieDetailsResponse } from '@/interfaces/IMovieDetailsResponse';
+import { getMovieDetailsResponseMock } from '../../../__tests__/mocks/getMovieDetailsResponseMock';
 
 export async function getMoveDetails(moveId: string) {
+  if (process.env.IS_FAKE_API) {
+    return getMovieDetailsResponseMock;
+  }
+
   const resultUrl = `https://api.themoviedb.org/3/movie/${moveId}?language=en-US`;
   const response = await fetch(resultUrl, {
     headers: {
