@@ -2,6 +2,7 @@ import { Container, Group, Stack, Title } from '@mantine/core';
 import { Metadata } from 'next';
 import { PageLayout } from '@/app/components/shared/PageLayout/PageLayout';
 import { SearchBar } from '../components/shared/SearchBar/SearchBar';
+import { RatedMoviesPaginatedList } from '../components/rated-movies/RatedMoviesPaginatedList';
 
 export const metadata: Metadata = {
   title: 'ArrowFlicks - Rated movies',
@@ -19,9 +20,9 @@ export default function Home(props: { searchParams: { [key: string]: string } })
               <Title size="32px" lh="45px" c="black" order={1} fw="bold">
                 Rated movies
               </Title>
-              <SearchBar searchParams={searchParams} />
+              <SearchBar searchParams={searchParams} isInstant />
             </Group>
-            <Group>List of rated movies</Group>
+            <RatedMoviesPaginatedList searchParams={searchParams} />
           </Stack>
         </Container>
       </PageLayout>
