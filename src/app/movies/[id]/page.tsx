@@ -8,6 +8,16 @@ import { getMoveDetails } from '@/lib/utils/getMoveDetails';
 import { getMoveVideos } from '@/lib/utils/getMoveVideos';
 import { formatCost, formatDate, formatDuration } from '@/lib/utils/textFromatUtils';
 import { Container, Stack } from '@mantine/core';
+import { Metadata } from 'next';
+
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const movieId = params.id;
+  const movieData = await getMoveDetails(movieId);
+  return {
+    title: `ArrowFlicks - ${movieData.title}`,
+    description: `Page with full information about movie ${movieData.title}. Overview: ${movieData.overview}`,
+  };
+}
 
 export default async function MoviePage({ params }: { params: { id: string } }) {
   const movieId = params.id;
