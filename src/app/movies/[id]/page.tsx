@@ -26,7 +26,7 @@ export default async function MoviePage({ params }: { params: { id: string } }) 
     return (
       <PageLayout>
         <Container w="100%" size="980px" c="black" py="40px" px="90px" bg="grey.2">
-          <Center>Server Error, Please try again Later</Center>{' '}
+          <Center>Server Error, Please try again Later</Center>
         </Container>
       </PageLayout>
     );
