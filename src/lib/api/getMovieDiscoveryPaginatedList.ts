@@ -24,7 +24,7 @@ export async function getMovieDiscoveryPaginatedList(
   const paramRatingFrom = ratingFrom ? `&vote_average.gte=${ratingFrom}` : '';
   const paramRatingTo = ratingTo ? `&vote_average.lte=${ratingTo}` : '';
 
-  const resultUrl = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US${paramPage}${paramSortBy}${paramYear}${paramWithGenres}${paramRatingFrom}${paramRatingTo}`;
+  const resultUrl = `${process.env.TMDB_API_URL}/discover/movie?include_adult=false&include_video=false&language=en-US${paramPage}${paramSortBy}${paramYear}${paramWithGenres}${paramRatingFrom}${paramRatingTo}`;
 
   let response = null;
 

@@ -6,7 +6,7 @@ export async function getMoveDetails(moveId: string) {
     return getMovieDetailsResponseMock;
   }
 
-  const resultUrl = `https://api.themoviedb.org/3/movie/${moveId}?language=en-US`;
+  const resultUrl = `${process.env.TMDB_API_URL}/movie/${moveId}?language=en-US`;
 
   let response = null;
 

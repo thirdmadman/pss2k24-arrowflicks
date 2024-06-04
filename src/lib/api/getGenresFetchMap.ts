@@ -9,10 +9,12 @@ export async function getGenresFetchMap() {
     return getGenresFetchMapMock;
   }
 
+  const resultUrl = `${process.env.TMDB_API_URL}/genre/movie/list?language=en`;
+
   let response = null;
 
   try {
-    response = await fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', {
+    response = await fetch(resultUrl, {
       headers: {
         Authorization: `Bearer ${process.env.TMDB_API_TOKEN}`,
       },
