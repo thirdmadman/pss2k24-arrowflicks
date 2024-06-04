@@ -23,7 +23,13 @@ export default async function MoviePage({ params }: { params: { id: string } }) 
   const movieId = params.id;
   const movieData = await getMoveDetails(movieId);
   if (!movieData) {
-    return <Center>Server error, please come later</Center>;
+    return (
+      <PageLayout>
+        <Container w="100%" size="980px" c="black" py="40px" px="90px" bg="grey.2">
+          <Center>Server Error, Please try again Later</Center>{' '}
+        </Container>
+      </PageLayout>
+    );
   }
   const moveVideos = await getMoveVideos(movieId);
   const ytKey = moveVideos && extractYtTrailerKey(moveVideos.results);

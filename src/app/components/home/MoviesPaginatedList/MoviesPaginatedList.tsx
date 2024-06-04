@@ -35,7 +35,7 @@ export async function MoviesPaginatedList(props: {
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   const isMoviesList = moviesList && moviesList.results?.length > 0;
   if (!isMoviesList) {
-    return <Center>Server error, please come later</Center>;
+    return <Center>Server Error, Please try again Later</Center>;
   }
 
   const genresMap = await getGenresFetchMap();
