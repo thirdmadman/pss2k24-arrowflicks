@@ -1,4 +1,4 @@
-import { Flex, Stack } from '@mantine/core';
+import { Center, Flex, Stack } from '@mantine/core';
 import { MovieCard } from '@/app/components/shared/MovieCard/MovieCard';
 import { getMovieDiscoveryPaginatedList } from '@/lib/api/getMovieDiscoveryPaginatedList';
 import { IMAGES_POSTERS_BASE } from '@/constants';
@@ -32,6 +32,12 @@ export async function MoviesPaginatedList(props: {
     { page: page.toString() }
   );
 
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  const isMoviesList = moviesList && moviesList.results?.length > 0;
+  if (!isMoviesList) {
+    return <Center>Server error, please come later</Center>;
+  }
+
   const genresMap = await getGenresFetchMap();
 
   return (
@@ -48,7 +54,7 @@ export async function MoviesPaginatedList(props: {
             year={parseInt(el.release_date.split('-')[0], 10)}
             rating={el.vote_average}
             reviewsCount={el.vote_count}
-            genres={mapGenresIdToLabels(genresMap, el.genre_ids)}
+            genres={genresMap ? mapGenresIdToLabels(genresMap, el.genre_ids) : undefined}
             key={el.id}
           />
         ))}

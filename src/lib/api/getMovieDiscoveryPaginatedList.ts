@@ -25,13 +25,29 @@ export async function getMovieDiscoveryPaginatedList(
   const paramRatingTo = ratingTo ? `&vote_average.lte=${ratingTo}` : '';
 
   const resultUrl = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US${paramPage}${paramSortBy}${paramYear}${paramWithGenres}${paramRatingFrom}${paramRatingTo}`;
-  const response = await fetch(resultUrl, {
-    headers: {
-      Authorization: `Bearer ${process.env.TMDB_API_TOKEN}`,
-    },
-    next: { revalidate: 60 * 60 * 24 },
-  });
-  const result = (await response.json()) as IMovieDiscoverResponse;
+
+  let response = null;
+
+  try {
+    response = await fetch(resultUrl, {
+      headers: {
+        Authorization: `Bearer ${process.env.TMDB_API_TOKEN}`,
+      },
+      next: { revalidate: 60 * 60 * 24 },
+    });
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
+
+  let result: null | IMovieDiscoverResponse = null;
+
+  try {
+    result = (await response.json()) as IMovieDiscoverResponse;
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
 
   return result;
 }
