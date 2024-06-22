@@ -13,7 +13,7 @@ interface ISearchBarProps {
   query?: string;
 }
 
-export function SearchBar({ searchParams }: { searchParams: ISearchBarProps }) {
+export function SearchBar({ searchParams, isInstant = false }: { searchParams: ISearchBarProps; isInstant?: boolean }) {
   const { query } = searchParams;
   const urlSearchParams = useSearchParams();
   const pathname = usePathname();
@@ -38,6 +38,7 @@ export function SearchBar({ searchParams }: { searchParams: ISearchBarProps }) {
   return (
     <TextInput
       miw="300px"
+      maw="490px"
       w="100%"
       leftSectionPointerEvents="none"
       leftSection={icon}
@@ -51,6 +52,7 @@ export function SearchBar({ searchParams }: { searchParams: ISearchBarProps }) {
       }
       defaultValue={query}
       onChange={(e) => {
+        isInstant && updateSearch(e.currentTarget.value, urlSearchParams, false);
         setSearchQuery(e.currentTarget.value);
       }}
       aria-label="Search movie title"

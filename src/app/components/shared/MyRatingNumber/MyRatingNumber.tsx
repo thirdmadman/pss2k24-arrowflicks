@@ -11,11 +11,19 @@ import { useEffect, useState } from 'react';
 
 interface IRatingNumberProps {
   movieId: string;
-  movieName: string;
+  image: {
+    src: string | undefined;
+    alt: string;
+  };
+  title: string;
+  year: number;
+  rating: number | undefined;
+  reviewsCount: number | undefined;
+  genres: Array<string> | undefined;
 }
 
 export function MyRatingNumber(props: IRatingNumberProps) {
-  const { movieId, movieName } = props;
+  const { movieId, title, image, year, rating, reviewsCount, genres } = props;
   const [isModalOpened, setIsModalOpened] = useState(false);
   const [userRating, setUserRating] = useState<IUserMovieRating | null>(null);
 
@@ -38,17 +46,22 @@ export function MyRatingNumber(props: IRatingNumberProps) {
         <Group wrap="nowrap" gap="4px">
           {starIcon}
           <Text size="16px" fw={700} c="black" pr="4px">
-            {userRating?.rating}
+            {userRating?.myRating}
           </Text>
         </Group>
       </UnstyledButton>
       {isModalOpened && (
         <UserRatingModal
-          existingRating={userRating?.rating}
+          existingRating={userRating?.myRating}
           movieId={movieId}
-          movieName={movieName}
+          title={title}
           modalState={isModalOpened}
           setModalState={setIsModalOpened}
+          image={image.src}
+          year={year}
+          rating={rating}
+          reviewsCount={reviewsCount}
+          genres={genres?.join(';')}
         />
       )}
     </>

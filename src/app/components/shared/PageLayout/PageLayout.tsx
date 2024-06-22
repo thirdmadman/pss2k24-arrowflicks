@@ -4,7 +4,7 @@ import { Logo } from '@/app/components/shared/Logo/Logo';
 
 const navigationMenu = [
   { name: 'Movies', link: '/' },
-  { name: 'Rated movies', link: '/rated' },
+  { name: 'Rated movies', link: '/rated-movies' },
 ];
 
 interface IPageLayoutProps {

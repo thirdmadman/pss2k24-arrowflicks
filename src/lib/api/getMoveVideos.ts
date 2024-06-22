@@ -6,14 +6,30 @@ export async function getMoveVideos(moveId: string) {
     return getMoveVideosResponseMock;
   }
 
-  const resultUrl = `https://api.themoviedb.org/3/movie/${moveId}/videos?language=en-US`;
-  const response = await fetch(resultUrl, {
-    headers: {
-      Authorization: `Bearer ${process.env.TMDB_API_TOKEN}`,
-    },
-    next: { revalidate: 60 * 60 * 24 },
-  });
-  const result = (await response.json()) as IMovieVideoResponse;
+  const resultUrl = `${process.env.TMDB_API_URL}/movie/${moveId}/videos?language=en-US`;
+
+  let response = null;
+
+  try {
+    response = await fetch(resultUrl, {
+      headers: {
+        Authorization: `Bearer ${process.env.TMDB_API_TOKEN}`,
+      },
+      next: { revalidate: 60 * 60 * 24 },
+    });
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
+
+  let result: null | IMovieVideoResponse = null;
+
+  try {
+    result = (await response.json()) as IMovieVideoResponse;
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
 
   return result;
 }

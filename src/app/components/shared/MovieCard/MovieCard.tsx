@@ -45,7 +45,19 @@ export function MovieCard(props: IMovieCardProps) {
               </Link>
 
               <div style={{ alignSelf: 'flex-start' }}>
-                <MyRatingNumber data-test-id="MyRatingNumber" movieId={movieId} movieName={title} />
+                <MyRatingNumber
+                  data-test-id="MyRatingNumber"
+                  movieId={movieId}
+                  title={title}
+                  image={{
+                    src: image.src,
+                    alt: image.alt,
+                  }}
+                  year={year}
+                  rating={rating}
+                  reviewsCount={reviewsCount}
+                  genres={genres}
+                />
               </div>
             </Group>
             {year && (
@@ -55,12 +67,12 @@ export function MovieCard(props: IMovieCardProps) {
             )}
             <RatingNumber rating={rating} countOfReviews={reviewsCount} />
           </Stack>
-          <Group gap="8px">
+          <Group gap="8px" wrap="nowrap">
             <Text c="grey.6" size="16px">
               Genres
             </Text>
             <Text c="black" size="16px">
-              {genres?.join(', ')}
+              {(genres?.join(', ').length ?? 0) > 30 ? `${genres?.join(', ').slice(0, 30)}...` : genres?.join(', ')}
             </Text>
           </Group>
         </Flex>

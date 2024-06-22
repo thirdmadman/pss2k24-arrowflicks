@@ -1,5 +1,10 @@
 export interface IUserMovieRating {
   movieId: string;
-  movieName: string;
-  rating: number;
+  image: string | undefined;
+  title: string;
+  myRating: number;
+  year: number;
+  rating: number | undefined;
+  reviewsCount: number | undefined;
+  genres: string | undefined;
 }

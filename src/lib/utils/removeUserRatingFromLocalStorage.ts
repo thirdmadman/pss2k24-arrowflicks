@@ -1,8 +1,7 @@
-import { IUserMovieRating } from '@/interfaces/IUserMovieRating';
 import DataLocalStorageProvider from '@/lib/services/DataLocalStorageProvider';
 
-export const removeUserRatingFromLocalStorage = (data: IUserMovieRating) => {
-  if (!data.movieId || !data.movieName || !data.rating) {
+export const removeUserRatingFromLocalStorage = (data: { movieId: string; title: string }) => {
+  if (!data.movieId || !data.title) {
     return;
   }
 

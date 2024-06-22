@@ -43,7 +43,18 @@ export function MovieCardFull(props: IMovieCardFullProps) {
               <Title size="20px" lh="24px" c="purple.5" order={3}>
                 {title}
               </Title>
-              <MyRatingNumber movieId={movieId} movieName={title} />
+              <MyRatingNumber
+                movieId={movieId}
+                image={{
+                  src: src,
+                  alt: title,
+                }}
+                title={title}
+                year={year}
+                rating={rating}
+                reviewsCount={reviewsCount}
+                genres={genres}
+              />
             </Group>
             {year && (
               <Text c="grey.6" size="16px">

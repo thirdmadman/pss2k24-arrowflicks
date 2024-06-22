@@ -12,15 +12,21 @@ import { removeUserRatingFromLocalStorage } from '@/lib/utils/removeUserRatingFr
 
 interface IUserRatingModalProps {
   movieId: string;
-  movieName: string;
+  image: string | undefined;
+  title: string;
+  year: number;
+  rating: number | undefined;
+  reviewsCount: number | undefined;
+  genres: string | undefined;
   modalState: boolean;
   existingRating: number | undefined;
   setModalState: (sate: boolean) => void;
 }
 
 export function UserRatingModal(props: IUserRatingModalProps) {
-  const { movieId, movieName, modalState, setModalState, existingRating } = props;
-  const [rating, setRating] = useState(existingRating ?? 0);
+  const { movieId, image, title, year, rating, reviewsCount, genres, modalState, setModalState, existingRating } =
+    props;
+  const [myRating, setMyRating] = useState(existingRating ?? 0);
   const buttonColor = getColor('grey', 5);
 
   const greyStarColor = getColor('grey', 3);
@@ -43,12 +49,12 @@ export function UserRatingModal(props: IUserRatingModalProps) {
     >
       <Stack gap="16px" pt="16px">
         <Text size="16px" lh="22px" c="black" fw="bold">
-          {movieName}
+          {title}
         </Text>
         <Rating
           count={10}
-          value={rating}
-          onChange={setRating}
+          value={myRating}
+          onChange={setMyRating}
           emptySymbol={<IconStar color={greyStarColor} />}
           fullSymbol={<IconStar color={purpleStarColor} />}
         />
@@ -58,7 +64,7 @@ export function UserRatingModal(props: IUserRatingModalProps) {
             size="medium"
             onClickEvent={() => {
               setModalState(false);
-              saveUserRatingToLocalStorage({ movieId, movieName, rating });
+              saveUserRatingToLocalStorage({ movieId, title, myRating, image, year, rating, reviewsCount, genres });
             }}
           />
           <UnstyledButton
@@ -68,7 +74,7 @@ export function UserRatingModal(props: IUserRatingModalProps) {
             fw={600}
             onClick={() => {
               setModalState(false);
-              removeUserRatingFromLocalStorage({ movieId, movieName, rating });
+              removeUserRatingFromLocalStorage({ movieId, title });
             }}
           >
             Remove rating

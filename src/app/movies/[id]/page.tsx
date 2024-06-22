@@ -7,23 +7,32 @@ import { extractYtTrailerKey } from '@/lib/utils/extractYtTrailerKey';
 import { getMoveDetails } from '@/lib/api/getMoveDetails';
 import { getMoveVideos } from '@/lib/api/getMoveVideos';
 import { formatCost, formatDate, formatDuration } from '@/lib/utils/textFromatUtils';
-import { Container, Stack } from '@mantine/core';
+import { Center, Container, Stack } from '@mantine/core';
 import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const movieId = params.id;
   const movieData = await getMoveDetails(movieId);
   return {
-    title: `ArrowFlicks - ${movieData.title}`,
-    description: `Page with full information about movie ${movieData.title}. Overview: ${movieData.overview}`,
+    title: `ArrowFlicks - ${movieData ? movieData.title : movieId}`,
+    description: `Page with full information about movie ${movieData ? movieData.title : movieId}. Overview: ${movieData ? movieData.title : 'not available'}`,
   };
 }
 
 export default async function MoviePage({ params }: { params: { id: string } }) {
   const movieId = params.id;
   const movieData = await getMoveDetails(movieId);
+  if (!movieData) {
+    return (
+      <PageLayout>
+        <Container w="100%" size="980px" c="black" py="40px" px="90px" bg="grey.2">
+          <Center>Server Error, Please try again Later</Center>
+        </Container>
+      </PageLayout>
+    );
+  }
   const moveVideos = await getMoveVideos(movieId);
-  const ytKey = extractYtTrailerKey(moveVideos.results);
+  const ytKey = moveVideos && extractYtTrailerKey(moveVideos.results);
 
   const movieTitle = movieData.title;
   return (

@@ -2,7 +2,7 @@ import { IUserMovieRating } from '@/interfaces/IUserMovieRating';
 import DataLocalStorageProvider from '@/lib/services/DataLocalStorageProvider';
 
 export const saveUserRatingToLocalStorage = (data: IUserMovieRating) => {
-  if (!data.movieId || !data.movieName || !data.rating) {
+  if (!data.movieId || !data.title || !data.myRating) {
     return;
   }
 
@@ -25,7 +25,7 @@ export const saveUserRatingToLocalStorage = (data: IUserMovieRating) => {
   }
 
   const newMoviesRating = [...moviesRating];
-  newMoviesRating[userRatingDataIndex].rating = data.rating;
+  newMoviesRating[userRatingDataIndex].myRating = data.myRating;
   const newUserData = { ...userData, userMoviesRating: newMoviesRating };
   const newLocalStorageData = { ...localStorageData, userData: newUserData };
   DataLocalStorageProvider.setData(newLocalStorageData);

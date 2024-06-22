@@ -27,13 +27,15 @@ export async function SearchFilters(props: { searchParams: ISearchFiltersProps }
 
   return (
     <Flex rowGap="24px" columnGap="16px" wrap="wrap" align="flex-end">
-      <MultiSelectInput
-        queryKey="genres"
-        value={genres}
-        label={'Genres'}
-        options={genresMap}
-        placeholder="Select genre"
-      />
+      {genresMap && (
+        <MultiSelectInput
+          queryKey="genres"
+          value={genres}
+          label={'Genres'}
+          options={genresMap}
+          placeholder="Select genre"
+        />
+      )}
       <SelectInput
         placeholder="Select release year"
         queryKey="releaseYear"
