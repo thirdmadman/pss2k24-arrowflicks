@@ -15,8 +15,8 @@ export default function Home(props: { searchParams: { [key: string]: string } })
   return (
     <>
       <PageLayout>
-        <Container w="100%" size="1160px" c="black" py="40px" px="90px" bg="grey.2">
-          <Stack gap="40px">
+        <Container w="100%" h="100%" size="1160px" c="black" py="40px" px="90px" bg="grey.2">
+          <Stack h="100%" gap="40px">
             <Group justify="space-between" wrap="nowrap" gap="40px">
               <Title size="32px" lh="45px" c="black" order={1} fw="bold">
                 Movies
