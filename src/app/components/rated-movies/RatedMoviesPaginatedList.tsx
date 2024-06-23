@@ -6,6 +6,7 @@ import { Flex, Stack } from '@mantine/core';
 import { useEffect, useState } from 'react';
 import { MovieCard } from '@/app/components/shared/MovieCard/MovieCard';
 import { Pagination } from '@/app/components/shared/Pagination/Pagination';
+import { MovieNotFound } from '@/app/components/shared/MovieNotFound/MovieNotFound';
 
 export function RatedMoviesPaginatedList({ searchParams }: { searchParams: { [key: string]: string } }) {
   const page = searchParams.page ? parseInt(searchParams.page, 10) : 1;
@@ -23,11 +24,16 @@ export function RatedMoviesPaginatedList({ searchParams }: { searchParams: { [ke
 
   const filteredArray = userRatingArray?.filter((el) => el.title.toLowerCase().includes(query.toLowerCase()));
   const paginatedArray = isQuery ? filteredArray : filteredArray?.slice((page - 1) * 8, page * 8);
+  const isPaginatedArrayEmpty = !paginatedArray || paginatedArray.length < 1;
+
+  if (isPaginatedArrayEmpty) {
+    return <MovieNotFound />;
+  }
 
   return (
-    <Stack>
+    <Stack h="100%">
       <Flex direction="row" justify="space-between" align="flex-start" wrap="wrap" gap="16px">
-        {paginatedArray?.map((el) => (
+        {paginatedArray.map((el) => (
           <MovieCard
             movieId={el.movieId}
             image={{

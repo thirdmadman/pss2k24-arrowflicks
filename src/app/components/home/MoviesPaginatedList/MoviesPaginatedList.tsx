@@ -1,10 +1,11 @@
-import { Center, Flex, Stack } from '@mantine/core';
+import { Flex, Stack } from '@mantine/core';
 import { MovieCard } from '@/app/components/shared/MovieCard/MovieCard';
 import { getMovieDiscoveryPaginatedList } from '@/lib/api/getMovieDiscoveryPaginatedList';
 import { IMAGES_POSTERS_BASE } from '@/constants';
 import { Pagination } from '@/app/components/shared/Pagination/Pagination';
 import { getGenresFetchMap } from '@/lib/api/getGenresFetchMap';
 import { mapGenresIdToLabels } from '@/lib/utils/mapGenresIdToLabels';
+import { MovieNotFound } from '@/app/components/shared/MovieNotFound/MovieNotFound';
 
 export async function MoviesPaginatedList(props: {
   searchParams?: {
@@ -35,7 +36,7 @@ export async function MoviesPaginatedList(props: {
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   const isMoviesList = moviesList && moviesList.results?.length > 0;
   if (!isMoviesList) {
-    return <Center>Server Error, Please try again Later</Center>;
+    return <MovieNotFound />;
   }
 
   const genresMap = await getGenresFetchMap();
