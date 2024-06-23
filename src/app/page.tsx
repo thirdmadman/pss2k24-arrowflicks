@@ -4,6 +4,8 @@ import { PageLayout } from './components/shared/PageLayout/PageLayout';
 import { SearchFilters } from './components/home/SearchFilters/SearchFilters';
 import { Suspense } from 'react';
 import { MoviesPaginatedList } from './components/home/MoviesPaginatedList/MoviesPaginatedList';
+import { generateSuspenseKeyBySearchParams } from '@/lib/utils/generateSuspenseKeyBySearchParams';
+import { MoviesPaginatedListSkeleton } from './components/home/MoviesPaginatedList/MoviesPaginatedListSkeleton';
 
 export const metadata: Metadata = {
   title: 'ArrowFlicks - Movies',
@@ -27,7 +29,7 @@ export default function Home(props: { searchParams: { [key: string]: string } })
                 <SearchFilters searchParams={searchParams} />
               </Suspense>
             </Stack>
-            <Suspense>
+            <Suspense key={generateSuspenseKeyBySearchParams(searchParams)} fallback={<MoviesPaginatedListSkeleton />}>
               <MoviesPaginatedList searchParams={searchParams} />
             </Suspense>
           </Stack>
