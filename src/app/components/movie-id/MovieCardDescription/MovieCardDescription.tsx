@@ -40,7 +40,7 @@ export function MovieCardDescription(props: IMovieCardDescriptionProps) {
   const { trailerLink, description, productionList } = props;
 
   return (
-    <Paper p="24px" radius="12px" maw={800} w="100%" c="black">
+    <Paper p="24px" radius="12px" maw={800} w="100%" c="black" bg="white">
       <Stack gap={0}>
         {trailerLink && (
           <>

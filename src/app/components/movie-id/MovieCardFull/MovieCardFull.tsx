@@ -26,7 +26,7 @@ export function MovieCardFull(props: IMovieCardFullProps) {
   const { src, alt } = image;
 
   return (
-    <Paper p="24px" radius="12px" maw={800} w="100%">
+    <Paper p="24px" radius="12px" maw={800} w="100%" bg="white">
       <Group wrap="nowrap" align="flex-start">
         <Image
           src={src ?? '/images/no-poster-placeholder.svg'}
