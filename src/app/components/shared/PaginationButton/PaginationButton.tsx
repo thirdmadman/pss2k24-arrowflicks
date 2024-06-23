@@ -33,6 +33,7 @@ export function PaginationButton(props: IPaginationButtonProps) {
       }}
       data-disabled={!isEnabled}
       href={href}
+      scroll={false}
     >
       {chevron ? chevron : text}
     </UnstyledButton>
