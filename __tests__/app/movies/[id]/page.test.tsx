@@ -1,5 +1,5 @@
 /* eslint-disable max-lines-per-function */
-import MoviePage from '@/app/movies/[id]/page';
+import MovieByIdPage from '@/app/movies/[id]/page';
 import { screen } from '@testing-library/react';
 import { render } from '../../../test-utils/render';
 import { getMovieDetailsResponseMock } from '../../../mocks/getMovieDetailsResponseMock';
@@ -14,7 +14,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-describe('MoviePage page', () => {
+describe('MovieByIdPage page', () => {
   beforeAll(() => {
     vi.mock('next/image', () => ({
       default: () => <div>img</div>,
@@ -79,12 +79,12 @@ describe('MoviePage page', () => {
   });
 
   it('should render without failing', async () => {
-    const { container } = render(await MoviePage({ params: { id: '0' } }));
+    const { container } = render(await MovieByIdPage({ params: { id: '0' } }));
     expect(container.firstElementChild).not.toBeNull();
   });
 
   it('should contain title', async () => {
-    render(await MoviePage({ params: { id: '0' } }));
+    render(await MovieByIdPage({ params: { id: '0' } }));
     expect(screen.getByText('ArrowFlicks')).not.toBeNull();
     expect(screen.findAllByTitle('Movies')).not.toBeNull();
 
@@ -151,7 +151,7 @@ describe('MoviePage page', () => {
 
   it('should render error', async () => {
     mocks.getMoveDetails.mockReturnValueOnce(null as unknown as typeof getMovieDetailsResponseMock);
-    render(await MoviePage({ params: { id: '0' } }));
+    render(await MovieByIdPage({ params: { id: '0' } }));
     expect(screen.getByText('ArrowFlicks')).not.toBeNull();
     expect(screen.getByText('Server Error, Please try again Later')).not.toBeNull();
   });

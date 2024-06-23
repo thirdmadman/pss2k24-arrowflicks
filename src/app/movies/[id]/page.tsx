@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   };
 }
 
-export default async function MoviePage({ params }: { params: { id: string } }) {
+export default async function MovieByIdPage({ params }: { params: { id: string } }) {
   const movieId = params.id;
   const movieData = await getMoveDetails(movieId);
   if (!movieData) {
