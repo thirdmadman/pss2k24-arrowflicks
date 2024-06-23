@@ -16,7 +16,7 @@ export function RatedMoviesPageContent(props: { searchParams: { [key: string]: s
   useEffect(() => {
     const { userData } = DataLocalStorageProvider.getData();
     const moviesRating = userData.userMoviesRating;
-    setIsUserData(Boolean(moviesRating));
+    setIsUserData(Boolean(moviesRating) && moviesRating.length > 0);
   }, []);
 
   if (!isUserData) {
