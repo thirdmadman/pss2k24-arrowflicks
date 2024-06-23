@@ -4,14 +4,13 @@ import Image from 'next/image';
 import { Flex, Group, Stack, Title } from '@mantine/core';
 import { SearchBar } from '@/app/components/shared/SearchBar/SearchBar';
 import { RatedMoviesPaginatedList } from '@/app/components/rated-movies/RatedMoviesPaginatedList';
-import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import DataLocalStorageProvider from '@/lib/services/DataLocalStorageProvider';
 import classes from '@/app/components/shared/PrimaryButton/PrimaryButton.module.css';
 import Link from 'next/link';
 
-export function RatedMoviesPageContent() {
-  const searchParams = Object.fromEntries(new URLSearchParams(useSearchParams()).entries());
+export function RatedMoviesPageContent(props: { searchParams: { [key: string]: string } }) {
+  const { searchParams } = props;
   const [isUserData, setIsUserData] = useState(true);
 
   useEffect(() => {
@@ -40,9 +39,13 @@ export function RatedMoviesPageContent() {
         <Title size="32px" lh="45px" c="black" order={1} fw="bold">
           Rated movies
         </Title>
-        <SearchBar searchParams={searchParams} isInstant />
+        <Suspense>
+          <SearchBar searchParams={searchParams} isInstant />
+        </Suspense>
       </Group>
-      <RatedMoviesPaginatedList searchParams={searchParams} />
+      <Suspense>
+        <RatedMoviesPaginatedList searchParams={searchParams} />
+      </Suspense>
     </Stack>
   );
 }
