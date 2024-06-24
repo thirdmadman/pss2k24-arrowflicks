@@ -16,7 +16,7 @@ export function SuspenseAfterMounted({
 
   useEffect(() => {
     setMounted(true);
-  }, []);
+  });
 
   if (!mounted) {
     return children;
