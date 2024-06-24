@@ -1,11 +1,11 @@
 import { Container, Group, Stack, Title } from '@mantine/core';
 import { Metadata } from 'next';
-import { PageLayout } from './components/shared/PageLayout/PageLayout';
-import { SearchFilters } from './components/home/SearchFilters/SearchFilters';
+import { PageLayout } from '@/app/components/shared/PageLayout/PageLayout';
+import { SearchFilters } from '@/app/components/home/SearchFilters/SearchFilters';
 import { Suspense } from 'react';
-import { MoviesPaginatedList } from './components/home/MoviesPaginatedList/MoviesPaginatedList';
+import { MoviesPaginatedList } from '@/app/components/home/MoviesPaginatedList/MoviesPaginatedList';
 import { generateSuspenseKeyBySearchParams } from '@/lib/utils/generateSuspenseKeyBySearchParams';
-import { MoviesPaginatedListSkeleton } from './components/home/MoviesPaginatedList/MoviesPaginatedListSkeleton';
+import { MoviesPaginatedListSkeleton } from '@/app/components/home/MoviesPaginatedList/MoviesPaginatedListSkeleton';
 import { SuspenseAfterMounted } from '@/lib/utils/SuspenseAfterMounted';
 import { MountedProvider } from '@/lib/utils/MountedProvider';
 

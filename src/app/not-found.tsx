@@ -2,7 +2,7 @@ import { Center, Stack, VisuallyHidden, Text } from '@mantine/core';
 import Image from 'next/image';
 import Link from 'next/link';
 import classes from '@/app/components/shared/PrimaryButton/PrimaryButton.module.css';
-import { Logo } from './components/shared/Logo/Logo';
+import { Logo } from '@/app/components/shared/Logo/Logo';
 
 export default function NotFound() {
   return (
