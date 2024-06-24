@@ -1,7 +1,7 @@
 'use client';
 
 import React, { ReactNode, Suspense, useEffect } from 'react';
-import { useMounted } from './MountedProvider';
+import { useMounted } from '@/lib/utils/MountedProvider';
 
 export function SuspenseAfterMounted({
   children,
