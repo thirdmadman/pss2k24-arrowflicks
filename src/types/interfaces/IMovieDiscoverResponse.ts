@@ -1,4 +1,4 @@
-import { IMovie } from './IMovie';
+import { IMovie } from '@/types/interfaces/IMovie';
 
 export interface IMovieDiscoverResponse {
   page: number;

@@ -1,4 +1,4 @@
-import { IMovieVideoResponse } from '@/interfaces/IMovieVideoResponse';
+import { IMovieVideoResponse } from '@/types/interfaces/IMovieVideoResponse';
 
 export const getMoveVideosResponseMock: IMovieVideoResponse = {
   id: 653346,

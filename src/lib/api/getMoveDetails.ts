@@ -1,4 +1,4 @@
-import { IMovieDetailsResponse } from '@/interfaces/IMovieDetailsResponse';
+import { IMovieDetailsResponse } from '@/types/interfaces/IMovieDetailsResponse';
 import { getMovieDetailsResponseMock } from '../../../__tests__/mocks/getMovieDetailsResponseMock';
 
 export async function getMoveDetails(moveId: string) {
