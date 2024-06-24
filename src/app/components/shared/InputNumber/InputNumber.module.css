@@ -31,6 +31,7 @@
   padding-right: 36px;
   font-size: 14px;
   line-height: 20px;
+  background-color: var(--mantine-color-white);
   border-radius: 8px;
   border: 1px solid var(--mantine-color-grey-5);
   &:focus {
