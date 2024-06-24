@@ -5,7 +5,7 @@ export function MovieCardSkeleton() {
   return (
     <Paper p="24px" radius="12px" maw={482} w="100%">
       <Group wrap="nowrap" align="flex-start">
-        <Skeleton style={{ width: '120px', height: '170px' }} />
+        <Skeleton width="120px" height="170px" style={{ minWidth: '120px', nimHeight: '170px' }} />
         <Flex direction="column" w="100%" justify="space-between" mih={170} gap="8px">
           <Stack gap="8px">
             <Group wrap="nowrap" justify="space-between">
