@@ -15,13 +15,17 @@ export function MovieCardImage({ ...imageProps }: ComponentProps<typeof Image>) 
   }, []);
 
   return (
-    <div className={classes.container}>
+    <div className={classes.container} style={{ width: imageProps.width, height: imageProps.height }}>
       <Skeleton
         width={imageProps.width}
         height={imageProps.height}
-        className={`${classes.skeleton} ${isLoading ? '' : classes.skeletonHidden}`}
+        className={`${classes.skeleton} ${isLoading ? '' : classes.skeletonHidden} ${isLoading ? classes.visible : classes.opacity}`}
       />
-      <Image {...imageProps} onLoad={() => setIsLoading(false)} />
+      <Image
+        {...imageProps}
+        onLoad={() => setIsLoading(false)}
+        className={`${classes.image} ${isLoading ? classes.opacity : classes.visible}`}
+      />
     </div>
   );
 }
