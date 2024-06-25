@@ -9,16 +9,16 @@ export function MovieCardSkeleton() {
         <Flex direction="column" w="100%" justify="space-between" mih={170} gap="8px">
           <Stack gap="8px">
             <Group wrap="nowrap" justify="space-between">
-              <Skeleton height={16} />
+              <Skeleton height={28} />
               <div style={{ alignSelf: 'flex-start' }}>
-                <Skeleton height={16} />
+                <Skeleton width={28} height={28} />
               </div>
             </Group>
-            <Skeleton height={16} />
-            <Skeleton height={16} />
+            <Skeleton height={20} />
+            <Skeleton height={28} />
           </Stack>
           <Group gap="8px" wrap="nowrap">
-            <Skeleton height={16} />
+            <Skeleton height={20} />
           </Group>
         </Flex>
       </Group>

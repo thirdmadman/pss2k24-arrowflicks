@@ -39,26 +39,24 @@ export function MovieCard(props: IMovieCardProps) {
           <Stack gap="8px">
             <Group wrap="nowrap" justify="space-between">
               <Link href={`/movies/${movieId}`} className={classes.link}>
-                <Title c="purple.5" order={3}>
+                <Title c="purple.5" order={3} size="20px" lh="24px">
                   {title.length > 50 ? `${title.slice(0, 50)}...` : title}
                 </Title>
               </Link>
 
-              <div style={{ alignSelf: 'flex-start' }}>
-                <MyRatingNumber
-                  data-test-id="MyRatingNumber"
-                  movieId={movieId}
-                  title={title}
-                  image={{
-                    src: image.src,
-                    alt: image.alt,
-                  }}
-                  year={year}
-                  rating={rating}
-                  reviewsCount={reviewsCount}
-                  genres={genres}
-                />
-              </div>
+              <MyRatingNumber
+                data-test-id="MyRatingNumber"
+                movieId={movieId}
+                title={title}
+                image={{
+                  src: image.src,
+                  alt: image.alt,
+                }}
+                year={year}
+                rating={rating}
+                reviewsCount={reviewsCount}
+                genres={genres}
+              />
             </Group>
             {year && (
               <Text c="grey.6" size="16px">
