@@ -1,0 +1,25 @@
+.container {
+  position: relative;
+}
+
+.skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.skeletonHidden {
+  z-index: -1;
+}
+
+.image {
+  transition: all 0.5s;
+}
+
+.opacity {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}

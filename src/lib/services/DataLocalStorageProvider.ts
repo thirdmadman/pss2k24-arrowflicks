@@ -1,6 +1,6 @@
 import { LOCAL_STORAGE_CONFIGS_VERSION, LOCAL_STORAGE_ITEM_NAME } from '@/constants';
-import { ILocalConfigs } from '@/interfaces/ILocalConfigs';
-import { IUserData } from '@/interfaces/IUserData';
+import { ILocalConfigs } from '@/types/interfaces/ILocalConfigs';
+import { IUserData } from '@/types/interfaces/IUserData';
 
 const configVersion = LOCAL_STORAGE_CONFIGS_VERSION;
 

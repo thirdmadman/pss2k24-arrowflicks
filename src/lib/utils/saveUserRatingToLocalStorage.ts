@@ -1,4 +1,4 @@
-import { IUserMovieRating } from '@/interfaces/IUserMovieRating';
+import { IUserMovieRating } from '@/types/interfaces/IUserMovieRating';
 import DataLocalStorageProvider from '@/lib/services/DataLocalStorageProvider';
 
 export const saveUserRatingToLocalStorage = (data: IUserMovieRating) => {

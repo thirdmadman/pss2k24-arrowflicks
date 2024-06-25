@@ -1,4 +1,4 @@
-import { IVideo } from '@/interfaces/IMovieVideoResponse';
+import { IVideo } from '@/types/interfaces/IMovieVideoResponse';
 
 export const extractYtTrailerKey = (videos: Array<IVideo>) => {
   const trailers = videos.filter((el) => el.type === 'Trailer');

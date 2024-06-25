@@ -1,4 +1,4 @@
-import { IMovieVideoResponse } from '@/interfaces/IMovieVideoResponse';
+import { IMovieVideoResponse } from '@/types/interfaces/IMovieVideoResponse';
 import { extractYtTrailerKey } from '@/lib/utils/extractYtTrailerKey';
 
 describe('extractYtTrailerKey', () => {

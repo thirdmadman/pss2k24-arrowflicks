@@ -1,5 +1,5 @@
 import { Flex, Skeleton, Stack } from '@mantine/core';
-import { MovieCardSkeleton } from '../../shared/MovieCard/MovieCardSkeleton';
+import { MovieCardSkeleton } from '@/app/components/shared/MovieCard/MovieCardSkeleton';
 
 const array = new Array(20).fill(1).map((el, i) => i + 1);
 

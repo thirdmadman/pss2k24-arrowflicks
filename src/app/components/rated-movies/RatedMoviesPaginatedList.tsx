@@ -1,6 +1,6 @@
 'use client';
 
-import { IUserMovieRating } from '@/interfaces/IUserMovieRating';
+import { IUserMovieRating } from '@/types/interfaces/IUserMovieRating';
 import DataLocalStorageProvider from '@/lib/services/DataLocalStorageProvider';
 import { Flex, Stack } from '@mantine/core';
 import { useEffect, useState } from 'react';

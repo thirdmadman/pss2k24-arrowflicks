@@ -1,11 +1,13 @@
 import { Container, Group, Stack, Title } from '@mantine/core';
 import { Metadata } from 'next';
-import { PageLayout } from './components/shared/PageLayout/PageLayout';
-import { SearchFilters } from './components/home/SearchFilters/SearchFilters';
+import { PageLayout } from '@/app/components/shared/PageLayout/PageLayout';
+import { SearchFilters } from '@/app/components/home/SearchFilters/SearchFilters';
 import { Suspense } from 'react';
-import { MoviesPaginatedList } from './components/home/MoviesPaginatedList/MoviesPaginatedList';
+import { MoviesPaginatedList } from '@/app/components/home/MoviesPaginatedList/MoviesPaginatedList';
 import { generateSuspenseKeyBySearchParams } from '@/lib/utils/generateSuspenseKeyBySearchParams';
-import { MoviesPaginatedListSkeleton } from './components/home/MoviesPaginatedList/MoviesPaginatedListSkeleton';
+import { MoviesPaginatedListSkeleton } from '@/app/components/home/MoviesPaginatedList/MoviesPaginatedListSkeleton';
+import { SuspenseAfterMounted } from '@/lib/utils/SuspenseAfterMounted';
+import { MountedProvider } from '@/lib/utils/MountedProvider';
 
 export const metadata: Metadata = {
   title: 'ArrowFlicks - Movies',
@@ -14,27 +16,31 @@ export const metadata: Metadata = {
 
 export default function Home(props: { searchParams: { [key: string]: string } }) {
   const { searchParams } = props;
+
   return (
-    <>
-      <PageLayout>
-        <Container w="100%" h="100%" size="1160px" c="black" py="40px" px="90px" bg="grey.2">
-          <Stack h="100%" gap="40px">
-            <Group justify="space-between" wrap="nowrap" gap="40px">
-              <Title size="32px" lh="45px" c="black" order={1} fw="bold">
-                Movies
-              </Title>
-            </Group>
-            <Stack>
-              <Suspense>
-                <SearchFilters searchParams={searchParams} />
-              </Suspense>
-            </Stack>
-            <Suspense key={generateSuspenseKeyBySearchParams(searchParams)} fallback={<MoviesPaginatedListSkeleton />}>
-              <MoviesPaginatedList searchParams={searchParams} />
+    <PageLayout>
+      <Container w="100%" h="100%" size="1160px" c="black" py="40px" px="90px" bg="grey.2">
+        <Stack h="100%" gap="40px">
+          <Group justify="space-between" wrap="nowrap" gap="40px">
+            <Title size="32px" lh="45px" c="black" order={1} fw="bold">
+              Movies
+            </Title>
+          </Group>
+          <Stack>
+            <Suspense>
+              <SearchFilters searchParams={searchParams} />
             </Suspense>
           </Stack>
-        </Container>
-      </PageLayout>
-    </>
+          <MountedProvider>
+            <SuspenseAfterMounted
+              key={generateSuspenseKeyBySearchParams(searchParams)}
+              fallback={<MoviesPaginatedListSkeleton />}
+            >
+              <MoviesPaginatedList searchParams={searchParams} />
+            </SuspenseAfterMounted>
+          </MountedProvider>
+        </Stack>
+      </Container>
+    </PageLayout>
   );
 }

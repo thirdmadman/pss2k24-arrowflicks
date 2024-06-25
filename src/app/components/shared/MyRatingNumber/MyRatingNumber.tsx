@@ -5,7 +5,7 @@ import { IconStar } from '@/app/components/shared/icons/IconStar';
 import { Group, Text, UnstyledButton } from '@mantine/core';
 import classes from '@/app/components/shared/MyRatingNumber/MyRatingNumber.module.css';
 import DataLocalStorageProvider from '@/lib/services/DataLocalStorageProvider';
-import { IUserMovieRating } from '@/interfaces/IUserMovieRating';
+import { IUserMovieRating } from '@/types/interfaces/IUserMovieRating';
 import { UserRatingModal } from '@/app/components/shared/UserRatingModal/UserRatingModal';
 import { useEffect, useState } from 'react';
 
@@ -43,11 +43,19 @@ export function MyRatingNumber(props: IRatingNumberProps) {
   return (
     <>
       <UnstyledButton onClick={() => setIsModalOpened(true)} classNames={{ root: classes.root }}>
-        <Group wrap="nowrap" gap="4px">
+        <Group
+          wrap="nowrap"
+          gap="4px"
+          style={{
+            alignSelf: 'flex-end',
+          }}
+        >
           {starIcon}
-          <Text size="16px" fw={700} c="black" pr="4px">
-            {userRating?.myRating}
-          </Text>
+          {userRating?.myRating && (
+            <Text size="16px" fw={700} c="black" pr="4px">
+              {userRating.myRating}
+            </Text>
+          )}
         </Group>
       </UnstyledButton>
       {isModalOpened && (
