@@ -1,5 +1,13 @@
 .root {
   max-height: unset;
+  max-width: 316px;
+  min-width: 300px;
+  width: 100%;
+
+  @media screen and (max-width: 640px) {
+    max-width: initial;
+    min-width: 288px;
+  }
 }
 
 .label {

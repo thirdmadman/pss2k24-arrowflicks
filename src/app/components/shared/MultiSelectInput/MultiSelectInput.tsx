@@ -49,9 +49,6 @@ export function MultiSelectInput(props: IMultiSelectProps) {
 
   return (
     <MultiSelect
-      maw="316px"
-      miw="300px"
-      w="100%"
       label={label}
       placeholder={isAnyOptionSelected ? undefined : placeholder}
       data={options}

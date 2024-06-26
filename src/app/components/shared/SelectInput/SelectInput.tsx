@@ -59,9 +59,6 @@ export function SelectInput(props: ISelectInputProps) {
 
   return (
     <Select
-      maw="316px"
-      miw="300px"
-      w="100%"
       label={label}
       placeholder={placeholder}
       data={options}

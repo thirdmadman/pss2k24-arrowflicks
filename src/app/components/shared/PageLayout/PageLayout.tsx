@@ -1,6 +1,10 @@
-import { Flex, Stack } from '@mantine/core';
+'use client';
+
+import { Burger, Flex, Stack } from '@mantine/core';
 import { TabButton } from '@/app/components/shared/TabButton/TabButton';
 import { Logo } from '@/app/components/shared/Logo/Logo';
+import classes from '@/app/components/shared/PageLayout/PageLayout.module.css';
+import { useState } from 'react';
 
 const navigationMenu = [
   { name: 'Movies', link: '/' },
@@ -12,11 +16,25 @@ interface IPageLayoutProps {
 }
 
 export function PageLayout(props: IPageLayoutProps) {
+  const [isNavigationExpanded, setIsNavigationExpanded] = useState(false);
+
   return (
-    <Flex wrap="nowrap" gap={0} mih="100%">
-      <Flex direction="column" bg="purple.1" maw="280px" p="24px" gap="60px" w="100%">
-        <Logo />
-        <Stack>
+    <Flex wrap="nowrap" gap={0} mih="100%" className={classes.container}>
+      <Flex className={`${classes.sidebar} ${isNavigationExpanded && classes.sidebarExpanded}`}>
+        <Burger
+          opened={isNavigationExpanded}
+          onClick={() => setIsNavigationExpanded(!isNavigationExpanded)}
+          aria-label="Toggle navigation"
+          color={isNavigationExpanded ? 'gray.6' : 'purple.5'}
+          className={classes.burger}
+        />
+        <div className={`${classes.logo} ${!isNavigationExpanded && classes.logoHidden}`}>
+          <Logo />
+        </div>
+
+        <Stack
+          className={`${classes.navigationContainer} ${isNavigationExpanded && classes.navigationContainerVisible}`}
+        >
           {navigationMenu.map((el) => (
             <TabButton text={el.name} href={el.link} key={el.name}></TabButton>
           ))}

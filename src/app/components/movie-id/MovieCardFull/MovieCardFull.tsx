@@ -2,6 +2,7 @@ import { Group, Paper, Stack, Title, Text, Flex } from '@mantine/core';
 import Image from 'next/image';
 import { MyRatingNumber } from '@/app/components/shared/MyRatingNumber/MyRatingNumber';
 import { RatingNumber } from '@/app/components/shared/RatingNumber/RatingNumber';
+import cardClasses from '@/app/components/movie-id/MovieCardFull/MovieCardFull.module.css';
 
 interface IMovieCardFullProps {
   movieId: string;
@@ -27,7 +28,7 @@ export function MovieCardFull(props: IMovieCardFullProps) {
 
   return (
     <Paper p="24px" radius="12px" maw={800} w="100%" bg="white">
-      <Group wrap="nowrap" align="flex-start">
+      <Group className={cardClasses.cardBody}>
         <Image
           src={src ?? '/images/no-poster-placeholder.svg'}
           alt={alt}
@@ -37,7 +38,7 @@ export function MovieCardFull(props: IMovieCardFullProps) {
             objectFit: src ? 'contain' : 'none',
           }}
         ></Image>
-        <Flex direction="column" w="100%" justify="space-between" mih={350} gap="8px">
+        <Flex direction="column" w="100%" justify="space-between" className={cardClasses.description}>
           <Stack gap="8px">
             <Group wrap="nowrap" justify="space-between" align="flex-start">
               <Title size="20px" lh="24px" c="purple.5" order={3}>

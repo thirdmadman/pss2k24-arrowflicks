@@ -5,6 +5,7 @@ import { ResetFilters } from '@/app/components/home/ResetFilters/ResetFilters';
 import { SelectInput } from '@/app/components/shared/SelectInput/SelectInput';
 import { sortByMap } from '@/lib/utils/sortByMap';
 import { getGenresFetchMap } from '@/lib/api/getGenresFetchMap';
+import classes from '@/app/components/home/SearchFilters/SearchFilters.module.css';
 
 interface ISearchFiltersProps {
   ratingFrom?: string;
@@ -26,7 +27,7 @@ export async function SearchFilters(props: { searchParams: ISearchFiltersProps }
   const genresMap = await getGenresFetchMap();
 
   return (
-    <Flex rowGap="24px" columnGap="16px" wrap="wrap" align="flex-end">
+    <Flex className={classes.container}>
       {genresMap && (
         <MultiSelectInput
           queryKey="genres"
@@ -44,7 +45,7 @@ export async function SearchFilters(props: { searchParams: ISearchFiltersProps }
         options={yearsArray}
         allowDeselect
       />
-      <Stack gap="8px" justify="space-between">
+      <Stack gap="8px" justify="space-between" className={classes.rating}>
         <Text fw="bold" size="16px" lh="22px">
           Ratings
         </Text>
