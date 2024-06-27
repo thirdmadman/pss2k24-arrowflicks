@@ -1,12 +1,13 @@
 import { Group, Paper, Stack, Flex } from '@mantine/core';
 import { Skeleton } from '@mantine/core';
+import cardClasses from '@/app/components/shared/MovieCard/MovieCard.module.css';
 
 export function MovieCardSkeleton() {
   return (
-    <Paper p="24px" radius="12px" maw={482} w="100%">
-      <Group wrap="nowrap" align="flex-start">
+    <Paper p="24px" className={cardClasses.card}>
+      <Group className={cardClasses.cardBody}>
         <Skeleton width="120px" height="170px" style={{ minWidth: '120px', nimHeight: '170px' }} />
-        <Flex direction="column" w="100%" justify="space-between" mih={170} gap="8px">
+        <Flex direction="column" w="100%" justify="space-between" gap="8px" className={cardClasses.description}>
           <Stack gap="8px">
             <Group wrap="nowrap" justify="space-between">
               <Skeleton height={28} />
