@@ -5,3 +5,10 @@
   line-height: 22px;
   border-bottom: 1px solid var(--mantine-color-grey-2);
 }
+
+.inner {
+  @media screen and (max-width: 640px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

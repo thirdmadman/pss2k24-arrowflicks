@@ -45,7 +45,7 @@ export function UserRatingModal(props: IUserRatingModalProps) {
       closeButtonProps={{
         icon: <IconClose color={buttonColor} />,
       }}
-      classNames={{ header: classes.header }}
+      classNames={{ header: classes.header, inner: classes.inner }}
     >
       <Stack gap="16px" pt="16px">
         <Text size="16px" lh="22px" c="black" fw="bold">

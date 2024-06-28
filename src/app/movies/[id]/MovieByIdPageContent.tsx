@@ -7,6 +7,7 @@ import { getMoveVideos } from '@/lib/api/getMoveVideos';
 import { extractYtTrailerKey } from '@/lib/utils/extractYtTrailerKey';
 import { formatDuration, formatDate, formatCost } from '@/lib/utils/textFromatUtils';
 import { Center, Container, Stack } from '@mantine/core';
+import classes from '@/app/movies/[id]/MovieByIdPage.module.css';
 
 export async function MovieByIdPageContent({ movieId }: { movieId: string }) {
   const movieData = await getMoveDetails(movieId);
@@ -23,7 +24,7 @@ export async function MovieByIdPageContent({ movieId }: { movieId: string }) {
   const ytKey = moveVideos && extractYtTrailerKey(moveVideos.results);
   const movieTitle = movieData.title;
   return (
-    <Container w="100%" size="980px" c="black" py="40px" px="90px" bg="grey.2">
+    <Container w="100%" size="980px" c="black" bg="grey.2" className={classes.container}>
       <Stack gap="20px">
         <BreadcrumbsNavigation
           items={[

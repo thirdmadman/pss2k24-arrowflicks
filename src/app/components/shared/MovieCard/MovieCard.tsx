@@ -3,7 +3,8 @@ import { MyRatingNumber } from '@/app/components/shared/MyRatingNumber/MyRatingN
 import { RatingNumber } from '@/app/components/shared/RatingNumber/RatingNumber';
 import Link from 'next/link';
 import classes from '@/app/components/shared/MovieCard/Link.module.css';
-import { MovieCardImage } from './MovieCardImage';
+import { MovieCardImage } from '@/app/components/shared/MovieCard/MovieCardImage';
+import cardClasses from '@/app/components/shared/MovieCard/MovieCard.module.css';
 
 interface IMovieCardProps {
   movieId: string;
@@ -23,8 +24,8 @@ export function MovieCard(props: IMovieCardProps) {
   const { src, alt } = image;
 
   return (
-    <Paper p="24px" radius="12px" maw={482} w="100%" bg="white">
-      <Group wrap="nowrap" align="flex-start">
+    <Paper bg="white" className={cardClasses.card}>
+      <Group className={cardClasses.cardBody}>
         <MovieCardImage
           src={src ?? 'images/no-poster-placeholder.svg'}
           alt={alt}
@@ -35,9 +36,9 @@ export function MovieCard(props: IMovieCardProps) {
           }}
           data-test-id="MovieCardImage"
         ></MovieCardImage>
-        <Flex direction="column" w="100%" justify="space-between" mih={170} gap="8px">
+        <Flex direction="column" w="100%" justify="space-between" gap="8px" className={cardClasses.description}>
           <Stack gap="8px">
-            <Group wrap="nowrap" justify="space-between">
+            <Group wrap="nowrap" justify="space-between" align="flex-start">
               <Link href={`/movies/${movieId}`} className={classes.link}>
                 <Title c="purple.5" order={3} size="20px" lh="24px">
                   {title.length > 50 ? `${title.slice(0, 50)}...` : title}
@@ -65,7 +66,7 @@ export function MovieCard(props: IMovieCardProps) {
             )}
             <RatingNumber rating={rating} countOfReviews={reviewsCount} />
           </Stack>
-          <Group gap="8px" wrap="nowrap">
+          <Group gap="8px" wrap="nowrap" align="flex-start">
             <Text c="grey.6" size="16px">
               Genres
             </Text>

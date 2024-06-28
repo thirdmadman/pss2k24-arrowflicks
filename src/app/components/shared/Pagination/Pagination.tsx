@@ -1,6 +1,7 @@
 import { calculatePagination } from '@/lib/utils/calculatePagination';
 import { Group } from '@mantine/core';
 import { PaginationButton } from '@/app/components/shared/PaginationButton/PaginationButton';
+import classes from '@/app/components/shared/Pagination/Pagination.module.css';
 
 interface IPaginationProps {
   totalItemsCount: number;
@@ -21,7 +22,7 @@ export function Pagination({ totalItemsCount, currentPage, itemsPerPage, searchP
   }
 
   return (
-    <Group>
+    <Group className={classes.container}>
       <PaginationButton
         isEnabled={paginationPreviousPage !== null}
         isChevron

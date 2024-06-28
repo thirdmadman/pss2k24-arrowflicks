@@ -1,6 +1,7 @@
 import { Container } from '@mantine/core';
 import { Metadata } from 'next';
 import { PageLayout } from '@/app/components/shared/PageLayout/PageLayout';
+import classes from '@/app/HomePage.module.css';
 
 import { RatedMoviesPageContent } from '@/app/rated-movies/RatedMoviesPageContent';
 
@@ -15,7 +16,7 @@ export default function RatedMoviesPage(props: { searchParams: { [key: string]: 
   return (
     <>
       <PageLayout>
-        <Container w="100%" h="100%" size="1160px" c="black" py="40px" px="90px" bg="grey.2">
+        <Container w="100%" h="100%" size="1160px" c="black" bg="grey.2" className={classes.container}>
           <RatedMoviesPageContent searchParams={searchParams} />
         </Container>
       </PageLayout>
