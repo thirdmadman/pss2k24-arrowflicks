@@ -26,11 +26,10 @@ export default defineConfig({
         '**/dist/**',
         '**/cypress/**',
         '**/.{idea,git,cache,output,temp}/**',
-        '__tests__/__mocks__/**',
+        '/src/__tests__/__mocks__/**',
         'src/types/**',
-        'src/config/**',
-        'src/constants.ts',
-        'src/app/components/shared/icons/**'
+        'src/shared/config/**',
+        'src/shared/ui/icons/**'
       ],
     },
   },
