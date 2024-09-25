@@ -1,5 +1,5 @@
 import { IMovieDiscoverResponse } from '@/types/interfaces/IMovieDiscoverResponse';
-import { moviesDiscoverResponseMock } from '../../../__tests__/mocks/moviesDiscoverResponseMock';
+import { moviesDiscoverResponseMock } from '../../__tests__/mocks/moviesDiscoverResponseMock';
 
 export async function getMovieDiscoveryPaginatedList(
   filters: {
