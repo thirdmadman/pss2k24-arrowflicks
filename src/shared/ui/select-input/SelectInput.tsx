@@ -48,7 +48,7 @@ export function SelectInput(props: ISelectInputProps) {
     </Center>
   );
 
-  const updateQuery = (value: string | undefined, currentSearchParams: URLSearchParams, isReload = false) => {
+  const updateQuery = (value: string | undefined, currentSearchParams: URLSearchParams | null, isReload = false) => {
     const newQuery = updateGetQuery(queryKey, value, currentSearchParams);
     if (isReload) {
       router.push(`${pathname}${newQuery}`, { scroll: false });

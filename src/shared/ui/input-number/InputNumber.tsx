@@ -19,7 +19,7 @@ export function InputNumber(props: IInputNumberProps) {
   const pathname = usePathname();
   const router = useRouter();
 
-  const updateQuery = (value: string, currentSearchParams: URLSearchParams, isReload = false) => {
+  const updateQuery = (value: string, currentSearchParams: URLSearchParams | null, isReload = false) => {
     const newQuery = updateGetQuery(queryKey, value, currentSearchParams);
     if (isReload) {
       router.push(`${pathname}${newQuery}`, { scroll: false });
