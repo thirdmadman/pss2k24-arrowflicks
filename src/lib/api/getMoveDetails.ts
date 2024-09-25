@@ -1,5 +1,5 @@
 import { IMovieDetailsResponse } from '@/types/interfaces/IMovieDetailsResponse';
-import { getMovieDetailsResponseMock } from '../../../__tests__/mocks/getMovieDetailsResponseMock';
+import { getMovieDetailsResponseMock } from '../../__tests__/mocks/getMovieDetailsResponseMock';
 
 export async function getMoveDetails(moveId: string) {
   if (process.env.IS_FAKE_API) {

@@ -1,4 +1,4 @@
-import { getGenresFetchMapMock } from '../../../__tests__/mocks/getGenresFetchMapMock';
+import { getGenresFetchMapMock } from '../../__tests__/mocks/getGenresFetchMapMock';
 
 interface IGenresResponse {
   genres: Array<{ id: number; name: string }>;
