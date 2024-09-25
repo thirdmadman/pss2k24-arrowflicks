@@ -15,7 +15,8 @@ export function TabButton(props: ITabButtonProps) {
   const pathname = usePathname();
   const { text, href } = props;
   const stringPathname = typeof href === 'object' ? href.pathname ?? '' : href;
-  const isActive = stringPathname.length > 1 ? pathname.startsWith(stringPathname) : pathname === stringPathname;
+  const isActive =
+    pathname && stringPathname.length > 1 ? pathname.startsWith(stringPathname) : pathname === stringPathname;
   return (
     <UnstyledButton
       component={Link}

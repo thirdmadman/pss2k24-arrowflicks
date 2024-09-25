@@ -20,7 +20,7 @@ export function SearchBar({ searchParams, isInstant = false }: { searchParams: I
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
 
-  const updateSearch = (searchQuery: string, currentSearchParams: URLSearchParams, isReload = false) => {
+  const updateSearch = (searchQuery: string, currentSearchParams: URLSearchParams | null, isReload = false) => {
     const newQuery = updateGetQuery('query', searchQuery, currentSearchParams);
     if (isReload) {
       router.push(`${pathname}${newQuery}`, { scroll: false });
