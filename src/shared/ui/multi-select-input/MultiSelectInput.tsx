@@ -1,10 +1,8 @@
 'use client';
 
 import { Center, MultiSelect } from '@mantine/core';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import { getColor } from '../../configs';
-import { updateGetQuery } from '../../lib';
 import { IconArrowDown, IconArrowUp } from '../icons';
 import classes from './MultiSelectInput.module.css';
 
@@ -12,20 +10,17 @@ interface IMultiSelectProps {
   label: string;
   placeholder: string;
   options: Array<string> | Array<{ value: string; label: string }>;
-  queryKey: string;
-  value?: string;
+  onChangeAction: (selectedOptions: Array<string>) => void;
+  values?: Array<string>;
   maxOptions?: number;
 }
 
 export function MultiSelectInput(props: IMultiSelectProps) {
-  const { value, label, options, placeholder, maxOptions, queryKey } = props;
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const router = useRouter();
-  const values = value && value.length > 0 ? value.split(';') : [];
+  const { values, label, options, placeholder, maxOptions, onChangeAction } = props;
+
   const [isDropDownOpened, setIsDropDownOpened] = useState(false);
 
-  const isAnyOptionSelected = values.length > 0;
+  const isAnyOptionSelected = values && values.length > 0;
   const colorGrey = getColor('grey', 5);
   const colorPurple = getColor('purple', 5);
 
@@ -37,15 +32,6 @@ export function MultiSelectInput(props: IMultiSelectProps) {
     </Center>
   );
 
-  const updateQuery = (value: string, currentSearchParams: URLSearchParams | null, isReload = false) => {
-    const newQuery = updateGetQuery(queryKey, value, currentSearchParams);
-    if (isReload) {
-      router.push(`${pathname}${newQuery}`, { scroll: false });
-      return;
-    }
-    router.replace(`${pathname}${newQuery}`, { scroll: false });
-  };
-
   return (
     <MultiSelect
       label={label}
@@ -56,9 +42,7 @@ export function MultiSelectInput(props: IMultiSelectProps) {
       onDropdownOpen={() => setIsDropDownOpened(true)}
       defaultValue={values}
       rightSection={icon}
-      onChange={(res) => {
-        updateQuery(res.join(';'), searchParams, true);
-      }}
+      onChange={onChangeAction}
       classNames={{
         root: classes.root,
         label: classes.label,
