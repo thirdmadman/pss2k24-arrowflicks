@@ -1,8 +1,8 @@
 import { Center, Stack, VisuallyHidden, Text } from '@mantine/core';
 import Image from 'next/image';
 import Link from 'next/link';
-import classes from '@/shared/ui/primary-button/PrimaryButton.module.css'; // TODO: FIX THIS
 import { Logo } from '@/shared/ui/logo';
+import classes from '@/shared/ui/primary-button/PrimaryButton.module.css'; // TODO: FIX THIS
 
 export function NotFoundPage() {
   return (

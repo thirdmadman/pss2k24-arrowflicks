@@ -1,11 +1,11 @@
 import { Flex, Group, Stack, Text } from '@mantine/core';
-import { sortByMap } from '@/shared/configs';
 import { getGenresFetchMap } from '@/lib/api/getGenresFetchMap';
-import classes from './SearchFilters.module.css';
+import { sortByMap } from '@/shared/configs';
+import { InputNumber } from '@/shared/ui/input-number';
 import { MultiSelectInput } from '@/shared/ui/multi-select-input';
 import { SelectInput } from '@/shared/ui/select-input';
-import { InputNumber } from '@/shared/ui/input-number';
 import { ResetFilters } from './reset-filters';
+import classes from './SearchFilters.module.css';
 
 interface ISearchFiltersProps {
   ratingFrom?: string;

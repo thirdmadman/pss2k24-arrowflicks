@@ -1,6 +1,6 @@
-import { TabButton } from '@/shared/ui/tab-button/TabButton';
 import { screen } from '@testing-library/react';
 import { render } from '@/__tests__/test-utils/render';
+import { TabButton } from './TabButton';
 
 describe('TabButton component', () => {
   beforeAll(() => {

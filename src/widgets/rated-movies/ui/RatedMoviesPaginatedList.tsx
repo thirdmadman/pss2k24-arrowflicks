@@ -1,12 +1,12 @@
 'use client';
 
-import { IUserMovieRating } from '@/types/interfaces/IUserMovieRating';
-import DataLocalStorageProvider from '@/lib/services/DataLocalStorageProvider';
 import { Flex, Stack } from '@mantine/core';
 import { useEffect, useState } from 'react';
+import DataLocalStorageProvider from '@/lib/services/DataLocalStorageProvider';
+import { IUserMovieRating } from '@/types/interfaces/IUserMovieRating';
 import { MovieCard } from '@/entities/movie-card';
-import { Pagination } from '@/widgets/pagination/ui/Pagination';
 import { MovieNotFound } from '@/shared/ui/movie-not-found';
+import { Pagination } from '@/shared/ui/pagination/Pagination';
 
 export function RatedMoviesPaginatedList({ searchParams }: { searchParams: { [key: string]: string } }) {
   const page = searchParams.page ? parseInt(searchParams.page, 10) : 1;

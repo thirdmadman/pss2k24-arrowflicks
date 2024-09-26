@@ -1,6 +1,6 @@
-import { Pagination } from '@/widgets/pagination/ui/Pagination';
 import { screen } from '@testing-library/react';
 import { render } from '@/__tests__/test-utils/render';
+import { Pagination } from './Pagination';
 
 describe('Pagination component', () => {
   it('should render without failing', () => {

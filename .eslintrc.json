@@ -10,7 +10,8 @@
     "plugin:@typescript-eslint/strict-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
     "next",
-    "next/core-web-vitals"
+    "next/core-web-vitals",
+    "plugin:@conarti/feature-sliced/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -27,7 +28,7 @@
     "jest": true,
     "node": true
   },
-  "plugins": ["@typescript-eslint", "react", "react-hooks", "jsx-a11y", "prettier"],
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "jsx-a11y", "prettier", "fsd-import"],
   "rules": {
     "@typescript-eslint/no-confusing-void-expression": ["error", { "ignoreArrowShorthand": true }],
     "no-negated-condition": "error",
@@ -105,7 +106,10 @@
     "quotes": ["error", "single"],
     "max-len": [0, 120, 2, { "ignoreUrls": true }],
     "arrow-parens": ["error", "always"],
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "fsd-import/fsd-relative-path": "error",
+    "fsd-import/public-api-imports": "error",
+    "fsd-import/layer-imports": "error"
   },
   "settings": {
     "react": {

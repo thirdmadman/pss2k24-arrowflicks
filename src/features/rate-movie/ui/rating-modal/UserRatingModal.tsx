@@ -1,14 +1,14 @@
 'use client';
 
 import { Modal, Stack, Text, Group, Rating, UnstyledButton } from '@mantine/core';
-import { IconClose } from '@/shared/ui/icons';
-import { getColor } from '@/shared/configs';
-import classes from './UserRatingModal.module.css';
-import { PrimaryButton } from '@/shared/ui/primary-button/PrimaryButton';
 import { useState } from 'react';
+import { getColor } from '@/shared/configs';
 import { saveUserRatingToLocalStorage } from '@/shared/lib';
-import { IconStar } from '@/shared/ui/icons';
 import { removeUserRatingFromLocalStorage } from '@/shared/lib';
+import { IconStar } from '@/shared/ui/icons';
+import { IconClose } from '@/shared/ui/icons';
+import { PrimaryButton } from '@/shared/ui/primary-button/PrimaryButton';
+import classes from './UserRatingModal.module.css';
 
 interface IUserRatingModalProps {
   movieId: string;

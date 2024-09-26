@@ -1,9 +1,9 @@
 'use client';
 
 import { NumberInput } from '@mantine/core';
-import classes from './InputNumber.module.css';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { updateGetQuery } from '@/shared/lib';
+import { updateGetQuery } from '../../lib';
+import classes from './InputNumber.module.css';
 
 interface IInputNumberProps {
   value?: number;

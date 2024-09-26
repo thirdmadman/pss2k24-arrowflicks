@@ -1,6 +1,6 @@
-import { HomePage } from '@/pages/home';
 import { screen } from '@testing-library/react';
 import { render } from '@/__tests__/test-utils/render';
+import { HomePage } from './HomePage';
 
 describe('HomePage page', () => {
   beforeAll(() => {
@@ -45,7 +45,7 @@ describe('HomePage page', () => {
       };
     });
 
-    vi.mock('@/widgets/search-filters', () => ({
+    vi.mock('@/features/filter', () => ({
       SearchFilters: () => <div>SearchFilters</div>,
     }));
 

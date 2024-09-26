@@ -1,10 +1,10 @@
 'use client';
 
 import { Burger, Flex, Stack } from '@mantine/core';
-import { TabButton } from '@/shared/ui/tab-button/TabButton';
-import { Logo } from '@/shared/ui/logo';
-import classes from './PageLayout.module.css';
 import { useState } from 'react';
+import { Logo } from '../logo';
+import { TabButton } from '../tab-button';
+import classes from './PageLayout.module.css';
 
 const navigationMenu = [
   { name: 'Movies', link: '/' },

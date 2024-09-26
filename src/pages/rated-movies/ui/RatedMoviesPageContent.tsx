@@ -1,13 +1,12 @@
 'use client';
-import Image from 'next/image';
-
 import { Flex, Group, Stack, Title } from '@mantine/core';
-import { SearchBar } from '@/widgets/search-bar';
+import Image from 'next/image';
+import Link from 'next/link';
 import { Suspense, useEffect, useState } from 'react';
 import DataLocalStorageProvider from '@/lib/services/DataLocalStorageProvider';
-import classes from '@/shared/ui/primary-button/PrimaryButton.module.css'; // TODO: FIX THIS
-import Link from 'next/link';
 import { RatedMoviesPaginatedList } from '@/widgets/rated-movies';
+import { SearchBar } from '@/features/search';
+import classes from '@/shared/ui/primary-button/PrimaryButton.module.css'; // TODO: FIX THIS
 
 export function RatedMoviesPageContent(props: { searchParams: { [key: string]: string } }) {
   const { searchParams } = props;

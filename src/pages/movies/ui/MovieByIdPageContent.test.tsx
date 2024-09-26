@@ -1,9 +1,9 @@
 /* eslint-disable max-lines-per-function */
-import { MovieByIdPageContent } from '@/pages/movies/ui/MovieByIdPageContent';
 import { screen } from '@testing-library/react';
-import { render } from '@/__tests__/test-utils/render';
-import { getMovieDetailsResponseMock } from '@/__tests__/mocks/getMovieDetailsResponseMock';
 import { getMoveVideosResponseMock } from '@/__tests__/mocks/getMoveVideosResponseMock';
+import { getMovieDetailsResponseMock } from '@/__tests__/mocks/getMovieDetailsResponseMock';
+import { render } from '@/__tests__/test-utils/render';
+import { MovieByIdPageContent } from './MovieByIdPageContent';
 
 const mocks = vi.hoisted(() => {
   return {

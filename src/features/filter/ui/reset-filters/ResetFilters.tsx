@@ -1,8 +1,8 @@
 import { Group, UnstyledButton, Text } from '@mantine/core';
-import classes from './ResetFilters.module.css';
 import Link from 'next/link';
 import { getColor } from '@/shared/configs';
 import { IconClose } from '@/shared/ui/icons';
+import classes from './ResetFilters.module.css';
 
 export function ResetFilters() {
   return (

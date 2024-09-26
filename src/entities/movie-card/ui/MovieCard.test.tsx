@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { render } from '@/__tests__/test-utils/render';
-import { MovieCard } from '@/entities/movie-card';
+import { MovieCard } from './MovieCard';
 
 describe('MovieCard component', () => {
   it('should render without failing', () => {

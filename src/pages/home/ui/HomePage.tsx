@@ -1,15 +1,14 @@
 import { Container, Group, Stack, Title } from '@mantine/core';
 import { Metadata } from 'next';
-import { PageLayout } from '@/shared/ui/page-layout';
-
 import { Suspense } from 'react';
-import { MoviesPaginatedList } from '@/widgets/movies-paginated-list';
-import { generateSuspenseKeyBySearchParams } from '@/shared/lib/';
-import { MoviesPaginatedListSkeleton } from '@/widgets/movies-paginated-list';
-import { SuspenseAfterMounted } from '@/lib/utils/SuspenseAfterMounted';
 import { MountedProvider } from '@/lib/utils/MountedProvider';
+import { SuspenseAfterMounted } from '@/lib/utils/SuspenseAfterMounted';
+import { MoviesPaginatedList } from '@/widgets/movies-paginated-list';
+import { MoviesPaginatedListSkeleton } from '@/widgets/movies-paginated-list';
+import { SearchFilters } from '@/features/filter';
+import { generateSuspenseKeyBySearchParams } from '@/shared/lib/';
+import { PageLayout } from '@/shared/ui/page-layout';
 import classes from './HomePage.module.css';
-import { SearchFilters } from '@/widgets/search-filters';
 
 export const metadata: Metadata = {
   title: 'ArrowFlicks - Movies',

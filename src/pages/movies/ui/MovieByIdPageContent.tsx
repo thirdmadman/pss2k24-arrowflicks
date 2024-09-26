@@ -1,13 +1,13 @@
-import { BreadcrumbsNavigation } from '@/shared/ui/breadcrumbs-navigation';
-import { IMAGES_POSTERS_BASE } from '@/shared/configs';
+import { Center, Container, Stack } from '@mantine/core';
 import { getMoveDetails } from '@/lib/api/getMoveDetails';
 import { getMoveVideos } from '@/lib/api/getMoveVideos';
-import { Center, Container, Stack } from '@mantine/core';
-import classes from './MovieByIdPage.module.css';
-import { extractYtTrailerKey, formatDate, formatDuration } from '@/shared/lib';
 import { MovieFullCard } from '@/entities/movie-full-card';
 import { MovieFullCardDescription } from '@/entities/movie-full-card-description';
+import { IMAGES_POSTERS_BASE } from '@/shared/configs';
+import { extractYtTrailerKey, formatDate, formatDuration } from '@/shared/lib';
 import { formatCost } from '@/shared/lib/textFormatUtils';
+import { BreadcrumbsNavigation } from '@/shared/ui/breadcrumbs-navigation';
+import classes from './MovieByIdPage.module.css';
 export async function MovieByIdPageContent({ movieId }: { movieId: string }) {
   const movieData = await getMoveDetails(movieId);
 

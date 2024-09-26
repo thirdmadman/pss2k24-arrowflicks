@@ -1,5 +1,5 @@
-import { MovieCardSkeleton } from '@/entities/movie-card';
 import { Flex, Skeleton, Stack } from '@mantine/core';
+import { MovieCardSkeleton } from '@/entities/movie-card';
 
 const array = new Array(20).fill(1).map((el, i) => i + 1);
 

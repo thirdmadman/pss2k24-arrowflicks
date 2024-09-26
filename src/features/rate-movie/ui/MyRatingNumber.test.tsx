@@ -1,6 +1,5 @@
 import { screen } from '@testing-library/react';
 import { render } from '@/__tests__/test-utils/render';
-
 import { LOCAL_STORAGE_CONFIGS_VERSION, LOCAL_STORAGE_ITEM_NAME } from '@/shared/configs';
 import { MyRatingNumber } from './MyRatingNumber';
 

@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react';
-import { render } from '@/__tests__/test-utils/render';
-import { MoviesPaginatedList } from '@/widgets/movies-paginated-list/ui/MoviesPaginatedList';
 import { getGenresFetchMapMock } from '@/__tests__/mocks/getGenresFetchMapMock';
 import { moviesDiscoverResponseMock } from '@/__tests__/mocks/moviesDiscoverResponseMock';
+import { render } from '@/__tests__/test-utils/render';
+import { MoviesPaginatedList } from './MoviesPaginatedList';
 
 describe('MoviesPaginatedList component', () => {
   beforeAll(() => {

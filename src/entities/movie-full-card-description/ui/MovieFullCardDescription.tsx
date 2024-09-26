@@ -1,6 +1,6 @@
-import { getColor } from '@/shared/configs';
 import { Divider, Group, Paper, Stack, Text, Title } from '@mantine/core';
 import Image from 'next/image';
+import { getColor } from '@/shared/configs';
 
 interface IProductionCompany {
   name: string;

@@ -1,6 +1,6 @@
-import { BreadcrumbsNavigation } from '@/shared/ui/breadcrumbs-navigation';
 import { screen } from '@testing-library/react';
 import { render } from '@/__tests__/test-utils/render';
+import { BreadcrumbsNavigation } from './BreadcrumbsNavigation';
 
 describe('BreadcrumbsNavigation component', () => {
   beforeAll(() => {

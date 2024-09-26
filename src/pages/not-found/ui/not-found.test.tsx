@@ -1,6 +1,6 @@
+import { screen } from '@testing-library/react';
 import { render } from '@/__tests__/test-utils/render';
 import { NotFoundPage } from './NotFoundPage';
-import { screen } from '@testing-library/react';
 
 describe('Not found page', () => {
   beforeAll(() => {
