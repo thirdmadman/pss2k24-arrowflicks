@@ -1,8 +1,6 @@
 'use client';
 
 import { NumberInput } from '@mantine/core';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { updateGetQuery } from '../../lib';
 import classes from './InputNumber.module.css';
 
 interface IInputNumberProps {
@@ -10,23 +8,11 @@ interface IInputNumberProps {
   placeholder: string;
   min: number;
   max: number;
-  queryKey: string;
+  onChangeAction: (value: string | number) => void;
 }
 
 export function InputNumber(props: IInputNumberProps) {
-  const { value, placeholder, min, max, queryKey } = props;
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const updateQuery = (value: string, currentSearchParams: URLSearchParams | null, isReload = false) => {
-    const newQuery = updateGetQuery(queryKey, value, currentSearchParams);
-    if (isReload) {
-      router.push(`${pathname}${newQuery}`, { scroll: false });
-      return;
-    }
-    router.replace(`${pathname}${newQuery}`, { scroll: false });
-  };
+  const { value, placeholder, min, max, onChangeAction } = props;
 
   return (
     <NumberInput
@@ -37,7 +23,7 @@ export function InputNumber(props: IInputNumberProps) {
       data-test-id="InputNumberInput"
       value={value ?? ''}
       placeholder={placeholder}
-      onChange={(val) => updateQuery(val.toString(), searchParams, true)}
+      onChange={onChangeAction}
       classNames={{
         root: classes.root,
         input: classes.input,
