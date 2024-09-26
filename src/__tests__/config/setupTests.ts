@@ -2,12 +2,9 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /// <reference types="vitest/globals" />
 import '@testing-library/react';
-
 import { cleanup } from '@testing-library/react';
 import { afterEach } from 'vitest';
-
 import '@testing-library/jest-dom/vitest';
-
 import { vi } from 'vitest';
 
 const mockWindow = () => {

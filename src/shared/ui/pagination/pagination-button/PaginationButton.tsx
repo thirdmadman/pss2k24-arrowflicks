@@ -1,10 +1,9 @@
-import { UnstyledButton } from '@mantine/core';
-import classes from './PaginationButton.module.css';
-import { IconChevronLeft } from '@/shared/ui/icons';
-import { IconChevronRight } from '@/shared/ui/icons';
-import { getColor } from '@/shared/configs';
-import Link from 'next/link';
 import { UrlObject } from 'url';
+import { UnstyledButton } from '@mantine/core';
+import Link from 'next/link';
+import { getColor } from '../../../configs';
+import { IconChevronLeft, IconChevronRight } from '../../icons';
+import classes from './PaginationButton.module.css';
 
 interface IPaginationButtonProps {
   text?: string;

@@ -1,5 +1,5 @@
-import { calculatePagination } from '@/shared/lib';
 import { describe, expect } from 'vitest';
+import { calculatePagination } from '../lib';
 
 describe('calculatePagination test', () => {
   it('should calculate pagination for 5 next pages', () => {

@@ -1,13 +1,13 @@
 'use client';
 
-import { getColor } from '@/shared/configs';
 import { TextInput } from '@mantine/core';
-import { IconSearch } from '@/shared/ui/icons/IconSearch';
-import classes from './SearchBar.module.css';
-import { PrimaryButton } from '@/shared/ui/primary-button';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { getColor } from '@/shared/configs';
 import { updateGetQuery } from '@/shared/lib';
+import { IconSearch } from '@/shared/ui/icons/IconSearch';
+import { PrimaryButton } from '@/shared/ui/primary-button';
+import classes from './SearchBar.module.css';
 
 interface ISearchBarProps {
   query?: string;

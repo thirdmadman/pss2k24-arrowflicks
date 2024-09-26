@@ -1,11 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
 'use client';
 
-import classes from './MovieCardImage.module.css';
-
 import { Skeleton } from '@mantine/core';
 import Image from 'next/image';
 import { ComponentProps, useEffect, useState } from 'react';
+import classes from './MovieCardImage.module.css';
 
 export function MovieCardImage({ ...imageProps }: ComponentProps<typeof Image>) {
   const [isLoading, setIsLoading] = useState(false);

@@ -1,4 +1,4 @@
-import { generateSuspenseKeyBySearchParams } from '@/shared/lib/';
+import { generateSuspenseKeyBySearchParams } from './generateSuspenseKeyBySearchParams';
 
 describe('generateSuspenseKeyBySearchParams', () => {
   it('should return empty string if searchParams not present', () => {

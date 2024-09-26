@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { render } from '@/__tests__/test-utils/render';
-import { RatingNumber } from '@/shared/ui/rating-number/RatingNumber';
+import { RatingNumber } from './RatingNumber';
 
 describe('RatingNumber component', () => {
   it('should render without failing', () => {

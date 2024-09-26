@@ -1,7 +1,7 @@
-import { getMoveDetails } from '@/lib/api/getMoveDetails';
 import { Metadata } from 'next';
-import { MovieByIdPageContent } from './MovieByIdPageContent';
+import { getMoveDetails } from '@/lib/api/getMoveDetails';
 import { PageLayout } from '@/shared/ui/page-layout';
+import { MovieByIdPageContent } from './MovieByIdPageContent';
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const movieId = params.id;

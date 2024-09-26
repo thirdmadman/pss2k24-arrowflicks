@@ -1,11 +1,11 @@
 import { Flex, Stack } from '@mantine/core';
-import { MovieCard } from '@/entities/movie-card';
-import { getMovieDiscoveryPaginatedList } from '@/lib/api/getMovieDiscoveryPaginatedList';
-import { IMAGES_POSTERS_BASE } from '@/shared/configs';
-import { Pagination } from '@/widgets/pagination/ui/Pagination';
 import { getGenresFetchMap } from '@/lib/api/getGenresFetchMap';
+import { getMovieDiscoveryPaginatedList } from '@/lib/api/getMovieDiscoveryPaginatedList';
+import { MovieCard } from '@/entities/movie-card';
+import { IMAGES_POSTERS_BASE } from '@/shared/configs';
 import { mapGenresIdToLabels } from '@/shared/lib';
 import { MovieNotFound } from '@/shared/ui/movie-not-found';
+import { Pagination } from '@/shared/ui/pagination/Pagination';
 
 export async function MoviesPaginatedList(props: {
   searchParams?: {

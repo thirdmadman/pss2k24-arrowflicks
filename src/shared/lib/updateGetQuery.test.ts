@@ -1,5 +1,5 @@
-import { updateGetQuery } from '@/shared/lib';
 import { URLSearchParams } from 'url';
+import { updateGetQuery } from '../lib';
 
 describe('updateGetQuery', () => {
   it('should return a query string with the updated key-value pair', () => {

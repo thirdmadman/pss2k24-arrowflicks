@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
-import { SearchBar } from '@/widgets/search-bar';
 import { render } from '@/__tests__/test-utils/render';
+import { SearchBar } from './SearchBar';
 
 describe('SearchBar component', () => {
   vi.mock('next/navigation', async () => {

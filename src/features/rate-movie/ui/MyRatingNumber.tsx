@@ -1,13 +1,13 @@
 'use client';
 
-import { getColor } from '@/shared/configs';
-import { IconStar } from '@/shared/ui/icons';
 import { Group, Text, UnstyledButton } from '@mantine/core';
-import classes from './MyRatingNumber.module.css';
+import { useEffect, useState } from 'react';
 import DataLocalStorageProvider from '@/lib/services/DataLocalStorageProvider';
 import { IUserMovieRating } from '@/types/interfaces/IUserMovieRating';
-import { UserRatingModal } from '@/shared/ui/user-rating-modal';
-import { useEffect, useState } from 'react';
+import { getColor } from '@/shared/configs';
+import { IconStar } from '@/shared/ui/icons';
+import classes from './MyRatingNumber.module.css';
+import { UserRatingModal } from './rating-modal';
 
 interface IRatingNumberProps {
   movieId: string;

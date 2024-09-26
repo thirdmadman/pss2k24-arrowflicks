@@ -1,7 +1,7 @@
 import '@mantine/core/styles.css';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
-import { theme } from '@/shared/configs';
 import { Inter } from 'next/font/google';
+import { theme } from '@/shared/configs';
 
 export const metadata = {
   title: 'ArrowFlicks',

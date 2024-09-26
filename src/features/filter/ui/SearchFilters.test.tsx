@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
-import { SearchFilters } from './SearchFilters';
 import { getGenresFetchMapMock } from '@/__tests__/mocks/getGenresFetchMapMock';
 import { render } from '@/__tests__/test-utils/render';
+import { SearchFilters } from './SearchFilters';
 
 describe('SearchFilters component', () => {
   beforeAll(() => {

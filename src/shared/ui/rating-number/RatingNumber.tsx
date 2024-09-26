@@ -1,7 +1,7 @@
-import { getColor } from '@/shared/configs';
-import { IconStar } from '@/shared/ui/icons';
 import { Group, Text } from '@mantine/core';
-import { formatNumberOfReviews } from '@/shared/lib';
+import { getColor } from '../../configs';
+import { formatNumberOfReviews } from '../../lib';
+import { IconStar } from '../icons';
 
 interface IRatingNumberProps {
   rating: number | undefined;

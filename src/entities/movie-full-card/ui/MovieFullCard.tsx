@@ -1,9 +1,9 @@
 import { Group, Paper, Stack, Title, Text, Flex } from '@mantine/core';
 import Image from 'next/image';
-
+// eslint-disable-next-line @conarti/feature-sliced/layers-slices
+import { MyRatingNumber } from '@/features/rate-movie'; //TODO: FIX THIS
 import { RatingNumber } from '@/shared/ui/rating-number/RatingNumber';
 import cardClasses from './MovieFullCard.module.css';
-import { MyRatingNumber } from '@/shared/ui/my-rating-number';
 
 interface IMovieFullCardProps {
   movieId: string;

@@ -1,10 +1,10 @@
 'use client';
 
-import { UnstyledButton } from '@mantine/core';
-import classes from './TabButton.module.css';
 import { UrlObject } from 'url';
+import { UnstyledButton } from '@mantine/core';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import classes from './TabButton.module.css';
 
 interface ITabButtonProps {
   text: string;

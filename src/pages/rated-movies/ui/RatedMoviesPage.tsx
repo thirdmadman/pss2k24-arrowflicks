@@ -2,8 +2,7 @@ import { Container } from '@mantine/core';
 import { Metadata } from 'next';
 import { PageLayout } from '@/shared/ui/page-layout';
 import classes from './RatedMoviesPage.module.css';
-
-import { RatedMoviesPageContent } from '@/pages/rated-movies/ui/RatedMoviesPageContent';
+import { RatedMoviesPageContent } from './RatedMoviesPageContent';
 
 export const metadata: Metadata = {
   title: 'ArrowFlicks - Rated movies',

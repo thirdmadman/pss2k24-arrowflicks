@@ -1,6 +1,6 @@
-import { PrimaryButton } from '@/shared/ui/primary-button';
 import { screen } from '@testing-library/react';
 import { render } from '@/__tests__/test-utils/render';
+import { PrimaryButton } from './PrimaryButton';
 
 describe('PrimaryButton component', () => {
   it('should render without failing', () => {

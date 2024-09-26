@@ -1,6 +1,6 @@
-import { ResetFilters } from '@/widgets/search-filters/ui/reset-filters/ResetFilters';
 import { screen } from '@testing-library/react';
 import { render } from '@/__tests__/test-utils/render';
+import { ResetFilters } from './ResetFilters';
 
 describe('ResetFilters component', () => {
   it('should render without failing', () => {

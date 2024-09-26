@@ -1,5 +1,5 @@
-import { calculatePagination } from '@/shared/lib';
 import { Group } from '@mantine/core';
+import { calculatePagination } from '../../lib';
 import { PaginationButton } from './pagination-button/PaginationButton';
 import classes from './Pagination.module.css';
 

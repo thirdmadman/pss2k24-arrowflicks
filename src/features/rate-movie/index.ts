@@ -1,0 +1,1 @@
+export { MyRatingNumber } from './ui';

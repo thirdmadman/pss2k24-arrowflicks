@@ -1,6 +1,6 @@
-import { UserRatingModal } from '@/shared/ui/user-rating-modal';
 import { screen } from '@testing-library/react';
 import { render } from '@/__tests__/test-utils/render';
+import { UserRatingModal } from '@/shared/ui/user-rating-modal';
 
 describe('UserRatingModal component', () => {
   it('should render without failing', () => {

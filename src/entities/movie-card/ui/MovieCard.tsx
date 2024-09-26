@@ -1,11 +1,11 @@
 import { Group, Paper, Stack, Title, Text, Flex } from '@mantine/core';
-
-import { RatingNumber } from '@/shared/ui/rating-number/RatingNumber';
 import Link from 'next/link';
+// eslint-disable-next-line @conarti/feature-sliced/layers-slices
+import { MyRatingNumber } from '@/features/rate-movie'; //TODO: FIX THIS
+import { RatingNumber } from '@/shared/ui/rating-number/RatingNumber';
 import classes from './Link.module.css';
-import { MovieCardImage } from './MovieCardImage';
 import cardClasses from './MovieCard.module.css';
-import { MyRatingNumber } from '@/shared/ui/my-rating-number';
+import { MovieCardImage } from './MovieCardImage';
 
 interface IMovieCardProps {
   movieId: string;
