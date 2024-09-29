@@ -7,3 +7,4 @@ export { saveUserRatingToLocalStorage } from './saveUserRatingToLocalStorage';
 export { setQueryParam } from './setQueryParam';
 export { formatDate, formatDuration, formatNumberOfReviews } from './textFormatUtils';
 export { updateGetQuery } from './updateGetQuery';
+export { useGetQuery } from './useGetQuery';

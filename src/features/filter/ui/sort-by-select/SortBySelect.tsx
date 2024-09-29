@@ -1,8 +1,7 @@
 'use client';
 
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { sortByMap } from '@/shared/configs';
-import { updateGetQuery } from '@/shared/lib';
+import { useGetQuery } from '@/shared/lib';
 import { SelectInput } from '@/shared/ui/select-input';
 
 interface ISortBySelectProps {
@@ -10,19 +9,7 @@ interface ISortBySelectProps {
 }
 
 export function SortBySelect({ sortBy }: ISortBySelectProps) {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const router = useRouter();
-  const queryKey = 'sortBy';
-
-  const updateQuery = (value: string | undefined, currentSearchParams: URLSearchParams | null, isReload = false) => {
-    const newQuery = updateGetQuery(queryKey, value, currentSearchParams);
-    if (isReload) {
-      router.push(`${pathname}${newQuery}`, { scroll: false });
-      return;
-    }
-    router.replace(`${pathname}${newQuery}`, { scroll: false });
-  };
+  const [setGetQuery] = useGetQuery('sortBy');
 
   return (
     <SelectInput
@@ -30,7 +17,7 @@ export function SortBySelect({ sortBy }: ISortBySelectProps) {
       value={sortBy ?? 'Most popular'}
       label={'Sort by'}
       onChangeAction={(res) => {
-        updateQuery(res ?? undefined, searchParams, true);
+        setGetQuery(res ?? undefined, true);
       }}
       options={sortByMap}
       defaultValueIndex={0}
