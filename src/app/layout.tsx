@@ -2,7 +2,7 @@ import '@mantine/core/styles.css';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import theme from '@/theme/theme';
 import { Inter } from 'next/font/google';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 export const metadata = {
   title: 'ArrowFlicks',
@@ -24,9 +24,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="shortcut icon" href="/favicon.ico" />
-
-        <GoogleAnalytics gaId="G-0JQDYRL8H6" />
       </head>
+      <GoogleTagManager gtmId="GTM-T7999C3W" />
       <body style={{ height: '100%' }}>
         <MantineProvider withGlobalClasses theme={theme}>
           {children}
