@@ -15,9 +15,11 @@ export const metadata: Metadata = {
   description: 'ArrowFlicks - Movies',
 };
 
-export function HomePage(props: { searchParams: { [key: string]: string } }) {
-  const { searchParams } = props;
-
+export async function HomePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | Array<string> | undefined }>;
+}) {
   return (
     <PageLayout>
       <Container w="100%" h="100%" size="1160px" c="black" bg="grey.2" className={classes.container}>
@@ -29,15 +31,15 @@ export function HomePage(props: { searchParams: { [key: string]: string } }) {
           </Group>
           <Stack>
             <Suspense>
-              <SearchFilters searchParams={searchParams} />
+              <SearchFilters searchParams={await searchParams} />
             </Suspense>
           </Stack>
           <MountedProvider>
             <SuspenseAfterMounted
-              key={generateSuspenseKeyBySearchParams(searchParams)}
+              key={generateSuspenseKeyBySearchParams(await searchParams)}
               fallback={<MoviesPaginatedListSkeleton />}
             >
-              <MoviesPaginatedList searchParams={searchParams} />
+              <MoviesPaginatedList searchParams={await searchParams} />
             </SuspenseAfterMounted>
           </MountedProvider>
         </Stack>
