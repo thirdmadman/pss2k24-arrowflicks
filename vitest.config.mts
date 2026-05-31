@@ -10,7 +10,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: './__tests__/config/setupTests.ts',
+    setupFiles: './src/__tests__/config/setupTests.ts',
     css: true,
     mockReset: true,
     restoreMocks: true,
@@ -26,11 +26,10 @@ export default defineConfig({
         '**/dist/**',
         '**/cypress/**',
         '**/.{idea,git,cache,output,temp}/**',
-        '__tests__/__mocks__/**',
+        '/src/__tests__/__mocks__/**',
         'src/types/**',
-        'src/config/**',
-        'src/constants.ts',
-        'src/app/components/shared/icons/**'
+        'src/shared/config/**',
+        'src/shared/ui/icons/**'
       ],
     },
   },
