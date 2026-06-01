@@ -55,13 +55,13 @@ describe('HomePage page', () => {
     }));
   });
 
-  it('should render without failing', () => {
-    const { container } = render(HomePage({ searchParams: {} }));
+  it('should render without failing', async () => {
+    const { container } = render(await HomePage({ searchParams: new Promise((resolve) => resolve({})) }));
     expect(container.firstElementChild).not.toBeNull();
   });
 
-  it('should contain title', () => {
-    render(HomePage({ searchParams: {} }));
+  it('should contain title', async () => {
+    render(await HomePage({ searchParams: new Promise((resolve) => resolve({})) }));
     expect(screen.getByText('ArrowFlicks')).not.toBeNull();
     expect(screen.findAllByTitle('Movies')).not.toBeNull();
   });

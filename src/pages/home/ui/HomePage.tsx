@@ -20,6 +20,8 @@ export async function HomePage({
 }: {
   searchParams: Promise<{ [key: string]: string | Array<string> | undefined }>;
 }) {
+  const receivedSearchParams = await searchParams;
+
   return (
     <PageLayout>
       <Container w="100%" h="100%" size="1160px" c="black" bg="grey.2" className={classes.container}>
@@ -31,15 +33,15 @@ export async function HomePage({
           </Group>
           <Stack>
             <Suspense>
-              <SearchFilters searchParams={await searchParams} />
+              <SearchFilters searchParams={receivedSearchParams} />
             </Suspense>
           </Stack>
           <MountedProvider>
             <SuspenseAfterMounted
-              key={generateSuspenseKeyBySearchParams(await searchParams)}
+              key={generateSuspenseKeyBySearchParams(receivedSearchParams)}
               fallback={<MoviesPaginatedListSkeleton />}
             >
-              <MoviesPaginatedList searchParams={await searchParams} />
+              <MoviesPaginatedList searchParams={receivedSearchParams} />
             </SuspenseAfterMounted>
           </MountedProvider>
         </Stack>
